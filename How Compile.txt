@@ -1,9 +1,9 @@
-You need to run Ts on the CMD to compilate
+You need to run this on the CMD to compilate
 
-cd (THE PATH OF RPCS)
+cd (PATH OF "ZKPrecense-Source")
 
-.\RPCDependences\Scripts\Activate
+.\ZKP-virtualenv\Scripts\Activate
 
-pyinstaller RPC.py -i ..\Art\RPCLogoExport.ico --noconfirm
+pyinstaller ZKPrecense.py -i ..\Art\ZKPLogoExport.ico --noconfirm
 
 And Ready :3
