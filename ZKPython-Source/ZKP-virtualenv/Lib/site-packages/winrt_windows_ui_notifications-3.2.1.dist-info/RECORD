@@ -1,0 +1,10 @@
+winrt/_winrt_windows_ui_notifications.cp313-win_amd64.pyd,sha256=XDPDQK0bdW2TAo2UwDH4xiqCeg9CLgwtczPMUELzuBI,542208
+winrt/_winrt_windows_ui_notifications.pyi,sha256=6TSBdgIjb1Eh4Ey3UvUQbH9OJVJyNfPJqIxsf6dHWIs,52314
+winrt/windows/ui/notifications/__init__.py,sha256=BPRd21QNLlQH_3tdY7UOeVH5h5X-X4ZvOWa_B7nKWqQ,9432
+winrt/windows/ui/notifications/__pycache__/__init__.cpython-313.pyc,,
+winrt/windows/ui/notifications/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+winrt_windows_ui_notifications-3.2.1.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+winrt_windows_ui_notifications-3.2.1.dist-info/METADATA,sha256=VKb3m7rBq0YddmqgMt50uq1iMVzi5BIIgxvgJ_LZE2I,1353
+winrt_windows_ui_notifications-3.2.1.dist-info/RECORD,,
+winrt_windows_ui_notifications-3.2.1.dist-info/WHEEL,sha256=qV0EIPljj1XC_vuSatRWjn02nZIz3N1t8jsZz7HBr2U,101
+winrt_windows_ui_notifications-3.2.1.dist-info/top_level.txt,sha256=BzwQb4dZRt0NxCXi10ARjWsox7Asmtf_lXrw_KR-D_E,6
