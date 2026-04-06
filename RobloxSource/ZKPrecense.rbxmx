@@ -1,7 +1,8 @@
 <roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<Meta name="ExplicitAutoJoints">true</Meta>
 	<External>null</External>
 	<External>nil</External>
-	<Item class="Folder" referent="RBXDFDBA7C3254243B6A60C27F9647BD87A">
+	<Item class="Folder" referent="RBX3757092CF41D4BA99F40ED904DA2239C">
 		<Properties>
 			<BinaryString name="AttributesSerialize"></BinaryString>
 			<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
@@ -10,7 +11,7 @@
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
-		<Item class="Script" referent="RBX43C0ED86B7154CF9A152EF48140CB99A">
+		<Item class="Script" referent="RBX743D923315204DE2B4E10D3823669F41">
 			<Properties>
 				<ProtectedString name="Source"><![CDATA[--[[
 	
@@ -121,7 +122,8 @@ function Start()
 		end
 	end
 	
-	Activity:Loop()
+	task.spawn(Activity.Loop, Activity)
+	
 	plugin.Unloading:Connect(function()
 		plugin:SetSetting("[ZKP] IsASesionActive", nil)
 		plugin:SetSetting(LOCK_NAME, nil)
@@ -130,9 +132,11 @@ function Start()
 		PlugDat:Save(true)
 		Activity.Terminate = true
 	end)
-	
+
 	CreateDrag(UI.CanvasGroup)
 	CreateDrag(UI.MiniLogo)
+
+	print("ZKP Started!!!")
 end
 
 if not started then
@@ -143,7 +147,7 @@ end
 				<bool name="Disabled">false</bool>
 				<Content name="LinkedSource"><null></null></Content>
 				<token name="RunContext">3</token>
-				<string name="ScriptGuid">{4B3A3EF2-B2A7-4056-A22D-045A9A3CB7A5}</string>
+				<string name="ScriptGuid">{3BFD8A65-AC48-48D7-A375-0D9935D391A0}</string>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 				<bool name="DefinesCapabilities">false</bool>
@@ -151,7 +155,7 @@ end
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ScreenGui" referent="RBX151B0B21E19649338BEAF4591732AA2B">
+			<Item class="ScreenGui" referent="RBXB6B5869942FE40BCAF75AD5413B4E955">
 				<Properties>
 					<bool name="ClipToDeviceSafeArea">true</bool>
 					<int name="DisplayOrder">0</int>
@@ -174,7 +178,7 @@ end
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="CanvasGroup" referent="RBX7588C6D3058D476EBF5148EF015978C3">
+				<Item class="CanvasGroup" referent="RBX31A318AEE76A4FEF9F10E0D36C345962">
 					<Properties>
 						<Color3 name="GroupColor3">
 							<R>1</R>
@@ -203,6 +207,7 @@ end
 						<int name="BorderSizePixel">0</int>
 						<bool name="ClipsDescendants">true</bool>
 						<bool name="Draggable">false</bool>
+						<token name="InputSink">0</token>
 						<bool name="Interactable">true</bool>
 						<int name="LayoutOrder">0</int>
 						<Ref name="NextSelectionDown">null</Ref>
@@ -242,7 +247,7 @@ end
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="TextLabel" referent="RBX7C452516B8DF47F3BEEF2BA24B1F90FE">
+					<Item class="TextLabel" referent="RBX58BD4191834E4969A42FFED97984CEDB">
 						<Properties>
 							<Font name="FontFace">
 								<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -296,6 +301,7 @@ end
 							<int name="BorderSizePixel">0</int>
 							<bool name="ClipsDescendants">false</bool>
 							<bool name="Draggable">false</bool>
+							<token name="InputSink">0</token>
 							<bool name="Interactable">false</bool>
 							<int name="LayoutOrder">-1</int>
 							<Ref name="NextSelectionDown">null</Ref>
@@ -335,7 +341,7 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
-						<Item class="UIStroke" referent="RBX3F76FD0FE27247BDBBB5DCEF0496D0D0">
+						<Item class="UIStroke" referent="RBXB0E0F1A236604B8881F5419ACEA77A12">
 							<Properties>
 								<token name="ApplyStrokeMode">0</token>
 								<UDim name="BorderOffset">
@@ -363,7 +369,7 @@ end
 							</Properties>
 						</Item>
 					</Item>
-					<Item class="UICorner" referent="RBXDC88CB893A4744F686D04678C20F10CC">
+					<Item class="UICorner" referent="RBX7E19D1D7F1504D2DA5B029A874619696">
 						<Properties>
 							<UDim name="CornerRadius">
 								<S>0</S>
@@ -377,7 +383,7 @@ end
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="UIStroke" referent="RBXF5C66E4BC1C84B0985A792B692F4C9F7">
+					<Item class="UIStroke" referent="RBXB43B0A3C61F4430E9BE1A1E05CF0B2DF">
 						<Properties>
 							<token name="ApplyStrokeMode">0</token>
 							<UDim name="BorderOffset">
@@ -403,7 +409,7 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
-						<Item class="UIGradient" referent="RBX5E5B35871D3C4165A1F1649D7C0DE702">
+						<Item class="UIGradient" referent="RBX5921EBBAB8D041108794448EE6491795">
 							<Properties>
 								<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 								<bool name="Enabled">true</bool>
@@ -422,7 +428,7 @@ end
 							</Properties>
 						</Item>
 					</Item>
-					<Item class="TextButton" referent="RBXDDC86F0FCB2D4187BE975AB60C224903">
+					<Item class="TextButton" referent="RBXDFDD28604D8140D28DCD7BB1571B8BD3">
 						<Properties>
 							<Font name="FontFace">
 								<Family><url>rbxasset://fonts/families/Ubuntu.json</url></Family>
@@ -482,6 +488,7 @@ end
 							<int name="BorderSizePixel">0</int>
 							<bool name="ClipsDescendants">false</bool>
 							<bool name="Draggable">false</bool>
+							<token name="InputSink">0</token>
 							<bool name="Interactable">true</bool>
 							<int name="LayoutOrder">0</int>
 							<Ref name="NextSelectionDown">null</Ref>
@@ -521,7 +528,7 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
-						<Item class="UIAspectRatioConstraint" referent="RBXAC00D46406DA4882914530FFB6A5F509">
+						<Item class="UIAspectRatioConstraint" referent="RBXFB27BAEE47C349BCB7C6F7C36FF1DE85">
 							<Properties>
 								<float name="AspectRatio">1</float>
 								<token name="AspectType">0</token>
@@ -535,7 +542,7 @@ end
 							</Properties>
 						</Item>
 					</Item>
-					<Item class="ScrollingFrame" referent="RBXF827BF6E4D1245AF830971C81F2072AC">
+					<Item class="ScrollingFrame" referent="RBX84572F3613CE4398B294B4416DB3F5E0">
 						<Properties>
 							<token name="AutomaticCanvasSize">2</token>
 							<Content name="BottomImage"><url>rbxasset://textures/ui/Scroll/scroll-bottom.png</url></Content>
@@ -585,6 +592,7 @@ end
 							<int name="BorderSizePixel">0</int>
 							<bool name="ClipsDescendants">true</bool>
 							<bool name="Draggable">false</bool>
+							<token name="InputSink">0</token>
 							<bool name="Interactable">true</bool>
 							<int name="LayoutOrder">0</int>
 							<Ref name="NextSelectionDown">null</Ref>
@@ -624,7 +632,7 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
-						<Item class="Frame" referent="RBXC5E5572CD14D46B29C46329A9EB448B4">
+						<Item class="Frame" referent="RBXB4511EBA5ABA40AC9460E266B8297BBF">
 							<Properties>
 								<token name="Style">0</token>
 								<bool name="Active">false</bool>
@@ -648,6 +656,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -687,7 +696,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="TextLabel" referent="RBXDB116B16A67D4335A3264AA10EC2C06E">
+							<Item class="TextLabel" referent="RBXEEAE966A029743BAADA511B7D6CD0B94">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -741,6 +750,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -780,7 +790,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="TextBox" referent="RBX5D411B448F5A44ACBBFD117F20CB460E">
+								<Item class="TextBox" referent="RBXAA277BE9633B4915AF31DF569D53434F">
 									<Properties>
 										<bool name="ClearTextOnFocus">false</bool>
 										<Font name="FontFace">
@@ -844,6 +854,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -883,7 +894,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UIStroke" referent="RBXB10F7FBCF5E240BBB8CC5B643A085DF2">
+									<Item class="UIStroke" referent="RBXB3F5D35A249C466E8E0845FEF0D60303">
 										<Properties>
 											<token name="ApplyStrokeMode">1</token>
 											<UDim name="BorderOffset">
@@ -909,7 +920,7 @@ end
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
-										<Item class="UIGradient" referent="RBX3C672CFD30EC4CB881777C939851B892">
+										<Item class="UIGradient" referent="RBXFCFD35A6E49A49FCB6258283D8C62B09">
 											<Properties>
 												<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 												<bool name="Enabled">true</bool>
@@ -928,7 +939,7 @@ end
 											</Properties>
 										</Item>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBX3AFC99B360FF4DF5987CAD1B43C030C2">
+									<Item class="UIAspectRatioConstraint" referent="RBXB57A864C288D4B049D8B8B24CD79CB0B">
 										<Properties>
 											<float name="AspectRatio">6.06981754</float>
 											<token name="AspectType">0</token>
@@ -942,7 +953,7 @@ end
 										</Properties>
 									</Item>
 								</Item>
-								<Item class="UICorner" referent="RBX6F103513039E4B4AA3AE376B2A723504">
+								<Item class="UICorner" referent="RBXDA9DADAE7D544AE88CEE4DFFB4B6C7FB">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -956,7 +967,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX89E1F82A1ADE4D3B8A5F347040BD278D">
+								<Item class="UIStroke" referent="RBX907E773B7301471D8A50BE5C67EDCA67">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -984,7 +995,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBX839392C3CE104F11A4B0540FB4DDBDF4">
+							<Item class="TextLabel" referent="RBX07C1723C7DC342B9A27E03687F3F21B9">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -1038,6 +1049,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -1077,7 +1089,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="TextBox" referent="RBX95FC0B64F31142EE868C9C44CD213488">
+								<Item class="TextBox" referent="RBXE07D7CE4BBE44543BC3421A5CE085D87">
 									<Properties>
 										<bool name="ClearTextOnFocus">false</bool>
 										<Font name="FontFace">
@@ -1141,6 +1153,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -1180,7 +1193,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UIStroke" referent="RBX7B6F9F0A00B942A8A37BF288140C1627">
+									<Item class="UIStroke" referent="RBX82A82F291CD141CCB6D63A19F8E63CEF">
 										<Properties>
 											<token name="ApplyStrokeMode">1</token>
 											<UDim name="BorderOffset">
@@ -1206,7 +1219,7 @@ end
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
-										<Item class="UIGradient" referent="RBX97F3E150C07448B1BB17824FAADB20BD">
+										<Item class="UIGradient" referent="RBX59FAAF399B744FD39B18321DC58691BE">
 											<Properties>
 												<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 												<bool name="Enabled">true</bool>
@@ -1225,7 +1238,7 @@ end
 											</Properties>
 										</Item>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBXDE22E6AF3B2B4D498119B7D1300E2AD4">
+									<Item class="UIAspectRatioConstraint" referent="RBX9558E7B4864C4FA98544138375D64F01">
 										<Properties>
 											<float name="AspectRatio">7.14285707</float>
 											<token name="AspectType">0</token>
@@ -1239,7 +1252,7 @@ end
 										</Properties>
 									</Item>
 								</Item>
-								<Item class="UICorner" referent="RBX681EDC6DAD974DE7BB735485FFD198E7">
+								<Item class="UICorner" referent="RBXB636AB357F324FD598D5D1D9737E068D">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -1253,7 +1266,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX78CB7E3273014383B80834A831C24452">
+								<Item class="UIStroke" referent="RBX450F561712944B3CA3FBF9A1DA537568">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -1281,7 +1294,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBX9F9F0FF99471462DBB997ED343571CD4">
+							<Item class="TextLabel" referent="RBX87F21852AC5D44A9B1C3DFE2DCBC8133">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -1335,6 +1348,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -1374,7 +1388,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="TextBox" referent="RBXC4ED73B1812C47C486BDB12F33F2D540">
+								<Item class="TextBox" referent="RBXCC0A4CF0191E4B1DB9808382206D7007">
 									<Properties>
 										<bool name="ClearTextOnFocus">false</bool>
 										<Font name="FontFace">
@@ -1438,6 +1452,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -1477,7 +1492,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UIStroke" referent="RBX3785091BB6004057858931926AE1A081">
+									<Item class="UIStroke" referent="RBX4C63A6244EFF4FB6A728FC9CFF3EB3FB">
 										<Properties>
 											<token name="ApplyStrokeMode">1</token>
 											<UDim name="BorderOffset">
@@ -1503,7 +1518,7 @@ end
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
-										<Item class="UIGradient" referent="RBXEA642B62B4C9404BA16C6A3A8D728C3B">
+										<Item class="UIGradient" referent="RBXB434443D91C0436D8FB8512C901C3074">
 											<Properties>
 												<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 												<bool name="Enabled">true</bool>
@@ -1522,7 +1537,7 @@ end
 											</Properties>
 										</Item>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBXF415197314A8402090FF63E00D7FC389">
+									<Item class="UIAspectRatioConstraint" referent="RBX1EF96A34CDB7414AA83A450075C1F6FF">
 										<Properties>
 											<float name="AspectRatio">7.14285707</float>
 											<token name="AspectType">0</token>
@@ -1536,7 +1551,7 @@ end
 										</Properties>
 									</Item>
 								</Item>
-								<Item class="UICorner" referent="RBX3A5475DF38B048E888EDBF7A502410DD">
+								<Item class="UICorner" referent="RBX83CDF476FF304B71BED0F348FD4BED89">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -1550,7 +1565,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX8083305F50384B6DB3B027A3A87237E9">
+								<Item class="UIStroke" referent="RBX528952F9C4EC4E219A87E456220F96AC">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -1578,7 +1593,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBXBF01F9D12E054B9BA17F2890CCEB5506">
+							<Item class="TextLabel" referent="RBX9C95F24F966B40E3973FFE84649AB5ED">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -1632,6 +1647,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -1671,7 +1687,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="TextBox" referent="RBXFD68A449110B4570AF3ABBF94988D4CF">
+								<Item class="TextBox" referent="RBX1970F12D9D394851B748C16E15E5F978">
 									<Properties>
 										<bool name="ClearTextOnFocus">false</bool>
 										<Font name="FontFace">
@@ -1735,6 +1751,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -1774,7 +1791,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UIStroke" referent="RBX646C9BB256404157A64DDBF3561C24C4">
+									<Item class="UIStroke" referent="RBX45545DF4DE834ED991FAB0CDED6D8F85">
 										<Properties>
 											<token name="ApplyStrokeMode">1</token>
 											<UDim name="BorderOffset">
@@ -1800,7 +1817,7 @@ end
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
-										<Item class="UIGradient" referent="RBXF7DA49F9065E42DE978EFCDF21B78216">
+										<Item class="UIGradient" referent="RBX64CE20B4463D4B2D8188A95F329C1D64">
 											<Properties>
 												<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 												<bool name="Enabled">true</bool>
@@ -1819,7 +1836,7 @@ end
 											</Properties>
 										</Item>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBX19E18939E319489B90EEE0581BCA7C07">
+									<Item class="UIAspectRatioConstraint" referent="RBX1B2AD5E54F414D948B52E5468105F24E">
 										<Properties>
 											<float name="AspectRatio">7.14285707</float>
 											<token name="AspectType">0</token>
@@ -1833,7 +1850,7 @@ end
 										</Properties>
 									</Item>
 								</Item>
-								<Item class="UICorner" referent="RBXD689BE57AC52436CBA0BC489F4F4B60D">
+								<Item class="UICorner" referent="RBX8D42AE5F48CB4F5CB63D1111C8F26398">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -1847,7 +1864,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBXA7C343D0BA9445DCBF73E9BB4F19914B">
+								<Item class="UIStroke" referent="RBX39AD4B65845E400C8E118A0274920157">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -1875,7 +1892,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBX3351D6CB40914E54BA9BF6D6EFFD9618">
+							<Item class="TextLabel" referent="RBX483FBE0B38294A39A8F32D9D927BC03E">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -1929,6 +1946,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -1968,7 +1986,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="TextBox" referent="RBXCE9ED4701D4341C4A5E4585ECB854AF6">
+								<Item class="TextBox" referent="RBX980FCC2C5E91497DA3D4F4076A2CA2B2">
 									<Properties>
 										<bool name="ClearTextOnFocus">false</bool>
 										<Font name="FontFace">
@@ -2032,6 +2050,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -2071,7 +2090,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UIStroke" referent="RBX15BBD16343504D4485A64941EF48287B">
+									<Item class="UIStroke" referent="RBX556938D9A61F42BE80B7184A35328DF5">
 										<Properties>
 											<token name="ApplyStrokeMode">1</token>
 											<UDim name="BorderOffset">
@@ -2097,7 +2116,7 @@ end
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
-										<Item class="UIGradient" referent="RBX86AB49E2DB704364BB83284B764EF850">
+										<Item class="UIGradient" referent="RBXA2C565906FBA46F0A113CCA7DCBA68E8">
 											<Properties>
 												<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 												<bool name="Enabled">true</bool>
@@ -2116,7 +2135,7 @@ end
 											</Properties>
 										</Item>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBXF85CBF82700C41EEB7347EAFA157A572">
+									<Item class="UIAspectRatioConstraint" referent="RBX38C35EC828634E7A8FFB9792E1B29E59">
 										<Properties>
 											<float name="AspectRatio">7.14285707</float>
 											<token name="AspectType">0</token>
@@ -2130,7 +2149,7 @@ end
 										</Properties>
 									</Item>
 								</Item>
-								<Item class="UICorner" referent="RBX65F45A76D0D8479EA5774AAEB5B441A2">
+								<Item class="UICorner" referent="RBXD10B217471074BC69FC8590EDC8A1B67">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -2144,7 +2163,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX731664174C1340D2BA1FC1D04E981056">
+								<Item class="UIStroke" referent="RBXDE81899AFD7F42C2A1410AE95798DE4B">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -2172,7 +2191,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBXB7667DE003464220BC77BFFACB55B612">
+							<Item class="TextLabel" referent="RBX52340921046C4718B880A0D00CCDFD6C">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -2226,6 +2245,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">-1</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -2265,7 +2285,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UIStroke" referent="RBX12887CB71B8D4C91AF9385F1068241A8">
+								<Item class="UIStroke" referent="RBXD73223713DB048F9A80D7D29E0F0E95F">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -2293,7 +2313,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBXC783858180D7456194B06168C4B04163">
+							<Item class="TextLabel" referent="RBX5CF92F3EE27C49CF97CA7158A767E757">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -2347,6 +2367,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -2386,7 +2407,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="TextBox" referent="RBX1B10C6E7A07E4E6AADE30119201202CC">
+								<Item class="TextBox" referent="RBX01460B6BC6704296BCF7A9959F59633E">
 									<Properties>
 										<bool name="ClearTextOnFocus">false</bool>
 										<Font name="FontFace">
@@ -2450,6 +2471,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -2489,7 +2511,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UIStroke" referent="RBXB4CE5BD982234AE6B3D9F740C2F75074">
+									<Item class="UIStroke" referent="RBX742694C14FAD4D61B25AB087BB4E6E29">
 										<Properties>
 											<token name="ApplyStrokeMode">1</token>
 											<UDim name="BorderOffset">
@@ -2515,7 +2537,7 @@ end
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
-										<Item class="UIGradient" referent="RBX5BDDE466A9EA410181D389FAB86C46B6">
+										<Item class="UIGradient" referent="RBX02E0A09EED6649E6BAA5594EFFCAD69C">
 											<Properties>
 												<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 												<bool name="Enabled">true</bool>
@@ -2534,7 +2556,7 @@ end
 											</Properties>
 										</Item>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBX04F6D46369414104A6003E805A8586A7">
+									<Item class="UIAspectRatioConstraint" referent="RBXB539C6920FF44A1D98D942CBC3DB527E">
 										<Properties>
 											<float name="AspectRatio">6.40401554</float>
 											<token name="AspectType">0</token>
@@ -2548,7 +2570,7 @@ end
 										</Properties>
 									</Item>
 								</Item>
-								<Item class="UICorner" referent="RBX78E5026E3B074465829A0D91517D2EAB">
+								<Item class="UICorner" referent="RBXCEE84CE7604D49038803E2751BB5F834">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -2562,7 +2584,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX4CB6346EF60340D2B2F30F7185B9857F">
+								<Item class="UIStroke" referent="RBX303D42A716E34AA3A8FFD5D8869763BD">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -2590,7 +2612,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="UIGridLayout" referent="RBX40F72029E6FF4A708F457B57C32F1236">
+							<Item class="UIGridLayout" referent="RBXC057A2A0F4484CC2908F6054BF9960F6">
 								<Properties>
 									<UDim2 name="CellPadding">
 										<XS>0</XS>
@@ -2619,7 +2641,7 @@ end
 								</Properties>
 							</Item>
 						</Item>
-						<Item class="Frame" referent="RBX3C6B76260C1B4459A1A1AE6F0C237206">
+						<Item class="Frame" referent="RBX450E635857BE429C897B069799BB8637">
 							<Properties>
 								<token name="Style">0</token>
 								<bool name="Active">false</bool>
@@ -2643,6 +2665,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">1</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -2682,7 +2705,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="TextLabel" referent="RBX3707308C4BDC447F9C208AE0FEC86E88">
+							<Item class="TextLabel" referent="RBXA613D220166D4348852BE3283F4696EC">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -2736,6 +2759,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">-1</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -2775,7 +2799,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UIStroke" referent="RBXD9AC1DFB35D84BC2A0AC4F582699E081">
+								<Item class="UIStroke" referent="RBXB4117E30965D4F3494E6D38C80B84E47">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -2803,7 +2827,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBXB4424F8F77F24392A4080A37F0854D4A">
+							<Item class="TextLabel" referent="RBX200F2FEEA18C4A60A00C94A6BBE352AC">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -2857,6 +2881,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -2896,7 +2921,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX1D9667633DCA4261AC9F776DC32EFA9D">
+								<Item class="UICorner" referent="RBXE533E1695C1F4A999D3EDA30408BE0DB">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -2910,7 +2935,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX565CD25BD6784E9FB8370486FEBA00CF">
+								<Item class="UIStroke" referent="RBXF4D0AA9219704AE39661705C97CF874C">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -2937,7 +2962,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="TextButton" referent="RBX464FD5AC798D42F797EF3A91E51817E7">
+								<Item class="TextButton" referent="RBX5A548953F40644A29A0D48F026E0357C">
 									<Properties>
 										<Font name="FontFace">
 											<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -2997,6 +3022,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -3036,7 +3062,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UICorner" referent="RBX10ED55B8870A4484990A73AB5B25AE03">
+									<Item class="UICorner" referent="RBX88792BE570664D5AA997AEF9C33A2EDB">
 										<Properties>
 											<UDim name="CornerRadius">
 												<S>0</S>
@@ -3050,7 +3076,7 @@ end
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBX489156056A3F45DEA506A6637AF3CE26">
+									<Item class="UIAspectRatioConstraint" referent="RBX7540A6C64CA147D6A7F827BF5030DC6A">
 										<Properties>
 											<float name="AspectRatio">6.84615374</float>
 											<token name="AspectType">0</token>
@@ -3065,7 +3091,7 @@ end
 									</Item>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBX3A91B96E55F940D8B20A7F24B87BCA8C">
+							<Item class="TextLabel" referent="RBX1314A2A96B334405897B66BE48923FB8">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -3119,6 +3145,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -3158,7 +3185,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBXDE064BC3C6D24B38B054B4DF853C5357">
+								<Item class="UICorner" referent="RBXD3DA1AD9762B4F0DBD1AA7F12C9536D2">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -3172,7 +3199,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBXCCC67AC48EF74E4F90CAB6084BFF13D4">
+								<Item class="UIStroke" referent="RBXBB92C3E8DE554828BB61AE9F800A8EE4">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -3199,7 +3226,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="TextButton" referent="RBX6008B23BF9FC46848371055034C6E6E3">
+								<Item class="TextButton" referent="RBX710178AA5C4945E8926BAB1C9BA6CA35">
 									<Properties>
 										<Font name="FontFace">
 											<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -3259,6 +3286,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -3298,7 +3326,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UICorner" referent="RBXCA78409969834BFC85CF1DA0B439583B">
+									<Item class="UICorner" referent="RBXAC23CAA80511468FACC6B75CE31AE52E">
 										<Properties>
 											<UDim name="CornerRadius">
 												<S>0</S>
@@ -3312,7 +3340,7 @@ end
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBX3FFD371A68814798B1F7294571013AD2">
+									<Item class="UIAspectRatioConstraint" referent="RBXD4EE95292FDA42D0965D0BC23F9C46BD">
 										<Properties>
 											<float name="AspectRatio">6.84615421</float>
 											<token name="AspectType">0</token>
@@ -3327,7 +3355,7 @@ end
 									</Item>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBX3AB695A8CD714A1393269F62933E7EA0">
+							<Item class="TextLabel" referent="RBX89CE4EE0C526461CACD467B52779F1B2">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -3381,6 +3409,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -3420,7 +3449,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX0FDA61392D5C44A8A02F87911731C7D7">
+								<Item class="UICorner" referent="RBXEF7BB91960FF4DB6B9F5C439667590B3">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -3434,7 +3463,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX8E53EC4DF04240DEBD126D4F147EB84B">
+								<Item class="UIStroke" referent="RBX407E2EB7B90C4E4BA7D3315E154267E0">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -3461,7 +3490,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="TextButton" referent="RBXF3055231989B4A01A707E7A044F47121">
+								<Item class="TextButton" referent="RBX5F73407712084D01B83708188AFBEEC1">
 									<Properties>
 										<Font name="FontFace">
 											<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -3521,6 +3550,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -3560,7 +3590,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UICorner" referent="RBXE69D6A1F5A2F483FA5F93D466DEAB609">
+									<Item class="UICorner" referent="RBXAFEB79F8247849B7AF9050CA7E1473AA">
 										<Properties>
 											<UDim name="CornerRadius">
 												<S>0</S>
@@ -3574,7 +3604,7 @@ end
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBX44702FCD0AB047AF8E240EA8E68333A3">
+									<Item class="UIAspectRatioConstraint" referent="RBXCE1D5A0363D84057955B13E5EC35C53C">
 										<Properties>
 											<float name="AspectRatio">6.84615421</float>
 											<token name="AspectType">0</token>
@@ -3589,7 +3619,7 @@ end
 									</Item>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBX2C986DC7DFE5400A9ACFCB6AB3703F3F">
+							<Item class="TextLabel" referent="RBX118BC551661F44BFADF0475EE3B93EB8">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -3643,6 +3673,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -3682,7 +3713,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX3FC26B1D8098456DAEE265D08FCFC304">
+								<Item class="UICorner" referent="RBX6FE1C0237194414FB23B7B5DE2AD64CD">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -3696,7 +3727,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBXAED9E5E161854FC8B2D8AF9759C7C383">
+								<Item class="UIStroke" referent="RBXD69096F318CC4E8CBEC626BEADFD8E79">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -3723,7 +3754,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="TextButton" referent="RBX1AF11EC7C242497B9348A61D097F66F4">
+								<Item class="TextButton" referent="RBX540AC357BB8044D3B231A58B1824C0A3">
 									<Properties>
 										<Font name="FontFace">
 											<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -3783,6 +3814,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -3822,7 +3854,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UICorner" referent="RBXEFEED9E62B874BF2897A4DF3F94A4C0F">
+									<Item class="UICorner" referent="RBX39E007DA43CA4C349B65338DAC8F2F66">
 										<Properties>
 											<UDim name="CornerRadius">
 												<S>0</S>
@@ -3836,7 +3868,7 @@ end
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBXBF6524C391164C73B10F3984A22471D7">
+									<Item class="UIAspectRatioConstraint" referent="RBXE5D5F9EB09CC4E0FB1BC2A37A771F0BF">
 										<Properties>
 											<float name="AspectRatio">6.84615374</float>
 											<token name="AspectType">0</token>
@@ -3851,7 +3883,7 @@ end
 									</Item>
 								</Item>
 							</Item>
-							<Item class="UIGridLayout" referent="RBX48D0FFBCC397452DBC03E639DE3BFEAC">
+							<Item class="UIGridLayout" referent="RBX459057EDFF4E4849AB84661F69192820">
 								<Properties>
 									<UDim2 name="CellPadding">
 										<XS>0</XS>
@@ -3880,7 +3912,7 @@ end
 								</Properties>
 							</Item>
 						</Item>
-						<Item class="Frame" referent="RBX84CB03C465AF4FA393AB5B036B3AB557">
+						<Item class="Frame" referent="RBX8C80C4C5236A4A4EB17779EE6B547E45">
 							<Properties>
 								<token name="Style">0</token>
 								<bool name="Active">false</bool>
@@ -3904,6 +3936,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">2</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -3943,7 +3976,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="TextLabel" referent="RBX2D72F9C506274F45A8525393D7BCB81E">
+							<Item class="TextLabel" referent="RBXDF9A6A00E54D4BC39D9414189F57E810">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -3997,6 +4030,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -4036,7 +4070,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UIStroke" referent="RBXA4DA2418F0134F07AAA6D8E99C208053">
+								<Item class="UIStroke" referent="RBX2F9BAC9F34E0479E8A253438C260D1A4">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -4064,7 +4098,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBXB2929D7E9B644485AAFCACCFDD9C6DFB">
+							<Item class="TextLabel" referent="RBX0E63FBE7D3224BEF8019F2AA96A47BB0">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -4118,6 +4152,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -4157,7 +4192,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBXF0AB805CBDC94F50B4E1D135E7528EED">
+								<Item class="UICorner" referent="RBX2418E56079EB40E08D6F2820627F31DD">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -4171,7 +4206,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX19BC608EB60C40C5AE819F8847E343A7">
+								<Item class="UIStroke" referent="RBX1111EB4D6A7C4AACBF645629D62DB66D">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -4198,7 +4233,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="TextBox" referent="RBX442746445D42425EB5BF2BC6649DF6AE">
+								<Item class="TextBox" referent="RBX8960F3CB07FA4F6582A29A347FC785FC">
 									<Properties>
 										<bool name="ClearTextOnFocus">false</bool>
 										<Font name="FontFace">
@@ -4262,6 +4297,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -4301,7 +4337,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UIStroke" referent="RBX4A862E5313F64CD7B21DEE6D93867E5F">
+									<Item class="UIStroke" referent="RBX5BD9FAFAC03C4C7AA95EBC0B829177D3">
 										<Properties>
 											<token name="ApplyStrokeMode">1</token>
 											<UDim name="BorderOffset">
@@ -4327,7 +4363,7 @@ end
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
-										<Item class="UIGradient" referent="RBXE45913C853084AB6B9A28666E20B95CF">
+										<Item class="UIGradient" referent="RBXB1452FB437FE4C2CAF3D37690A065CB4">
 											<Properties>
 												<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 												<bool name="Enabled">true</bool>
@@ -4346,7 +4382,7 @@ end
 											</Properties>
 										</Item>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBXBA03AB4A873E41459DFC78C333BF23FA">
+									<Item class="UIAspectRatioConstraint" referent="RBXA3B496AC37804002AFBB32D373A3707A">
 										<Properties>
 											<float name="AspectRatio">7.06116629</float>
 											<token name="AspectType">0</token>
@@ -4361,7 +4397,7 @@ end
 									</Item>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBX76DC1B0C2B2E461986F3B951576129B5">
+							<Item class="TextLabel" referent="RBX0BBCC6170BC0499D8C19474A32047986">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -4415,6 +4451,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -4454,7 +4491,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBXBCEC7D6214BF4DA286CCDB592729A4DE">
+								<Item class="UICorner" referent="RBX08433C4CD4304A86A524885E7A5462D1">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -4468,7 +4505,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBXAEB0C2EAC63144A2BC106BACEBACCE7C">
+								<Item class="UIStroke" referent="RBX5E09092C25F743298FE2DCF72835BFB5">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -4495,7 +4532,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="TextBox" referent="RBX0751499575464AA78ED5F7B69AC95B3B">
+								<Item class="TextBox" referent="RBXCE71B2CF1D3F42C398AEE6064763CC85">
 									<Properties>
 										<bool name="ClearTextOnFocus">false</bool>
 										<Font name="FontFace">
@@ -4559,6 +4596,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -4598,7 +4636,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UIStroke" referent="RBX773F7AB390D14D4AB3AB143A5DF3009D">
+									<Item class="UIStroke" referent="RBX365B0B1AE716431A946C025C08A49D1F">
 										<Properties>
 											<token name="ApplyStrokeMode">1</token>
 											<UDim name="BorderOffset">
@@ -4624,7 +4662,7 @@ end
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
-										<Item class="UIGradient" referent="RBX35D16B36C7FD47F58321F6E3B0CFCE77">
+										<Item class="UIGradient" referent="RBX0D6A190ED75A429C8CFE79FC3791CA36">
 											<Properties>
 												<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 												<bool name="Enabled">true</bool>
@@ -4643,7 +4681,7 @@ end
 											</Properties>
 										</Item>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBXF065FF990A664896AD9F3FFD1B5498F6">
+									<Item class="UIAspectRatioConstraint" referent="RBXFBD3C23B4D5B4DAB8E1AF58D04461AA7">
 										<Properties>
 											<float name="AspectRatio">3.45080829</float>
 											<token name="AspectType">0</token>
@@ -4657,7 +4695,7 @@ end
 										</Properties>
 									</Item>
 								</Item>
-								<Item class="TextBox" referent="RBX1F35C1A24BDD45FB8BA98326B1D36CB3">
+								<Item class="TextBox" referent="RBXC0D14967342A4AF781E103E440DD4E6F">
 									<Properties>
 										<bool name="ClearTextOnFocus">false</bool>
 										<Font name="FontFace">
@@ -4721,6 +4759,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -4760,7 +4799,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UIStroke" referent="RBXA886F490508444C5A756F118AF2C6A03">
+									<Item class="UIStroke" referent="RBX89F44254973940B6928817B0EF847A2E">
 										<Properties>
 											<token name="ApplyStrokeMode">1</token>
 											<UDim name="BorderOffset">
@@ -4786,7 +4825,7 @@ end
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
-										<Item class="UIGradient" referent="RBXB85CB3AF0BD449C48F48CF68010F7405">
+										<Item class="UIGradient" referent="RBXC9B2E04C68574C669DC79F3E9A47B191">
 											<Properties>
 												<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 												<bool name="Enabled">true</bool>
@@ -4805,7 +4844,7 @@ end
 											</Properties>
 										</Item>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBXB588AD70DC0143F18D81FBBB7E5A4D0C">
+									<Item class="UIAspectRatioConstraint" referent="RBX6A01AC0110844548B0C127E308D8324E">
 										<Properties>
 											<float name="AspectRatio">3.81116557</float>
 											<token name="AspectType">0</token>
@@ -4820,7 +4859,7 @@ end
 									</Item>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBXB2D8DBEBE968424FB04B0FE0E0D42775">
+							<Item class="TextLabel" referent="RBX9FE82ED4E91F4D66B1A3CF8ABC9A1D51">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -4874,6 +4913,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -4913,7 +4953,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX29DCC4846E944471BBF9C131BFAE7E37">
+								<Item class="UICorner" referent="RBXA20F8803139E4ADFB7B80C8B88C5F701">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -4927,7 +4967,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX41B00A9041AB44C39C67ACBB142CEFBF">
+								<Item class="UIStroke" referent="RBXFD24161EB9CB40FD942DACC8F795D82D">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -4954,7 +4994,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="TextButton" referent="RBX18D20E4CBB084703AF35B6D54E8779E7">
+								<Item class="TextButton" referent="RBXB26FF86A2DD14CEF98CA7F42A7CD6C41">
 									<Properties>
 										<Font name="FontFace">
 											<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -5014,6 +5054,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -5053,7 +5094,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UICorner" referent="RBX756AD5CA5F7B4A2C87B3CFEE2493CA94">
+									<Item class="UICorner" referent="RBXBA945166F9D64F96BAEED2985C8D291A">
 										<Properties>
 											<UDim name="CornerRadius">
 												<S>0</S>
@@ -5067,7 +5108,7 @@ end
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBX5FB357B039F44E969E89D2D1645E32E3">
+									<Item class="UIAspectRatioConstraint" referent="RBXDB63F6453DF04D6F8094F1F1BC8F7A5E">
 										<Properties>
 											<float name="AspectRatio">6.84615421</float>
 											<token name="AspectType">0</token>
@@ -5082,7 +5123,7 @@ end
 									</Item>
 								</Item>
 							</Item>
-							<Item class="UIGridLayout" referent="RBXDCC6AD1A1AF14F8CBCD2A867291BE8F2">
+							<Item class="UIGridLayout" referent="RBX60CE7E864C2742DBA3BAB44DD396751B">
 								<Properties>
 									<UDim2 name="CellPadding">
 										<XS>0</XS>
@@ -5111,7 +5152,7 @@ end
 								</Properties>
 							</Item>
 						</Item>
-						<Item class="TextLabel" referent="RBX5A64F18A430446309307B87C73727756">
+						<Item class="TextLabel" referent="RBXBB15F33DE83B4F78A4CCD464E9CB67D7">
 							<Properties>
 								<Font name="FontFace">
 									<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -5165,6 +5206,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">-1</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -5205,7 +5247,7 @@ end
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="Frame" referent="RBXD7843A42FBB4431E8B896DE5321CEA90">
+						<Item class="Frame" referent="RBXCD2C17715B6A444392BCD69C051AAC21">
 							<Properties>
 								<token name="Style">0</token>
 								<bool name="Active">false</bool>
@@ -5229,6 +5271,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -5268,7 +5311,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="TextLabel" referent="RBXAF7D9E1EF30B42CEAFAD6B858C04AA61">
+							<Item class="TextLabel" referent="RBX3ED9F97EE2214B50ADF469DF31090A7B">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -5322,6 +5365,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -5361,7 +5405,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UIStroke" referent="RBXD3C2605B6477464AA4C7B5CDFD858C74">
+								<Item class="UIStroke" referent="RBXB3E97645372F477D97609EAA75BD3D25">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -5389,7 +5433,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBXB57339DE98004B67BB775AECE22DF28D">
+							<Item class="TextLabel" referent="RBX6372D4FCFAC94FDF96700D5979834DF8">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -5443,6 +5487,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -5482,7 +5527,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX10FBC47041114E859650BF036FEF0309">
+								<Item class="UICorner" referent="RBXFF8727783A374A89885A5CC30030CC9D">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -5496,7 +5541,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBXBDBB8D900B7F4887B5D9D3524AF44255">
+								<Item class="UIStroke" referent="RBX4A41E70D6CE64744939FBC53F39CAEBC">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -5523,7 +5568,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="TextButton" referent="RBX3B9086D2A835442281E80FA0F3F20F71">
+								<Item class="TextButton" referent="RBX1622B4F335D04CFBBEB3FB5B97A97D17">
 									<Properties>
 										<Font name="FontFace">
 											<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -5583,6 +5628,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -5622,7 +5668,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UICorner" referent="RBXAB979B49C56D444D9AE63B902CA0A2F4">
+									<Item class="UICorner" referent="RBXEC1EAB1F83B046AD9661B3622D7BCA64">
 										<Properties>
 											<UDim name="CornerRadius">
 												<S>0</S>
@@ -5636,7 +5682,7 @@ end
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBX62A399DF1D714D0A9DFAB0D2046B0FD3">
+									<Item class="UIAspectRatioConstraint" referent="RBX5B979C08FBC44CFEB4A73783142C48A7">
 										<Properties>
 											<float name="AspectRatio">6.84615421</float>
 											<token name="AspectType">0</token>
@@ -5651,7 +5697,7 @@ end
 									</Item>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBX901D42083DEF4A5794A8CA1E6EEA3DF6">
+							<Item class="TextLabel" referent="RBX9C2287FA4B104B81A7EEBD66AA1781DC">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -5705,6 +5751,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -5744,7 +5791,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBXB186CC6AB9A748DAB6C1E21082FE3077">
+								<Item class="UICorner" referent="RBXCAD2CBF601394E008AD1C2DA05DD8FC7">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -5758,7 +5805,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBXE2728729D3D94549BA7AF7FDC5255970">
+								<Item class="UIStroke" referent="RBXFC4C15BD1D8844A79BF8F7D1BC83BF78">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -5785,7 +5832,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="TextButton" referent="RBXFB998C93434048DD9F496B94157F2BFD">
+								<Item class="TextButton" referent="RBXFA4AE3235403469A98FD2930B7FB9ADC">
 									<Properties>
 										<Font name="FontFace">
 											<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -5845,6 +5892,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -5884,7 +5932,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UICorner" referent="RBX68F009E867054D9E8C2D72F23CB40244">
+									<Item class="UICorner" referent="RBX32B9740A78B14D199A9BED90CBDEEA4E">
 										<Properties>
 											<UDim name="CornerRadius">
 												<S>0</S>
@@ -5898,7 +5946,7 @@ end
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBXB2C0E24B8120490FB793D0734E577038">
+									<Item class="UIAspectRatioConstraint" referent="RBX318CFEAD479A4313BEF74A4D885E3985">
 										<Properties>
 											<float name="AspectRatio">6.84615421</float>
 											<token name="AspectType">0</token>
@@ -5913,7 +5961,7 @@ end
 									</Item>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBX018B624A504A4466A1C3D41315B32776">
+							<Item class="TextLabel" referent="RBX2630A5EE2ED14CA9AD5F0642872B1461">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -5967,6 +6015,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -6006,7 +6055,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX92256089C55043F09C0632834F025BCF">
+								<Item class="UICorner" referent="RBX53657102DAB740EFB958D98FD76DA85F">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -6020,7 +6069,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBXE7DD1DB5CE1F4FDDB2EE42682E470C27">
+								<Item class="UIStroke" referent="RBX372A93D92F6E43C3A42EADA830A11B4C">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -6047,7 +6096,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="TextButton" referent="RBXA11C960F3C1A432A8858803FE54D1966">
+								<Item class="TextButton" referent="RBX6A2E706187C24E0E8253AE7DDC68CB4A">
 									<Properties>
 										<Font name="FontFace">
 											<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -6107,6 +6156,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -6146,7 +6196,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UICorner" referent="RBX90F445A1023941FCBADF6D8FE51F27A5">
+									<Item class="UICorner" referent="RBX53ED6295C570487CBEDE6699990FC8AA">
 										<Properties>
 											<UDim name="CornerRadius">
 												<S>0</S>
@@ -6160,7 +6210,7 @@ end
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBXD8460B396A884D7ABDA0053B9D39FAF4">
+									<Item class="UIAspectRatioConstraint" referent="RBX36E4D2F57F184D4B9A1F0EB3486C80B9">
 										<Properties>
 											<float name="AspectRatio">6.84615421</float>
 											<token name="AspectType">0</token>
@@ -6175,7 +6225,7 @@ end
 									</Item>
 								</Item>
 							</Item>
-							<Item class="TextLabel" referent="RBXB1BA62BE896845D4A9DC40CA932E0E91">
+							<Item class="TextLabel" referent="RBX6CAD7E85FE244E51B7276CC3F92165CE">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -6229,6 +6279,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -6268,7 +6319,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX5323DF2C831C470D9464F866846E6C73">
+								<Item class="UICorner" referent="RBX5425D71036AF4C54B684024FDEE550C5">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -6282,7 +6333,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX9ACB5FF47C5B4B4F88E687D71D25096D">
+								<Item class="UIStroke" referent="RBXA4FF458CE92E4F8FADF4B242F80EE9A7">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -6309,7 +6360,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="TextButton" referent="RBX26AE8D32DAEE447B8C9207BD921978F7">
+								<Item class="TextButton" referent="RBX87DD224B319C4E1188B886C0A4C671B2">
 									<Properties>
 										<Font name="FontFace">
 											<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -6369,6 +6420,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -6408,7 +6460,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UICorner" referent="RBXE537451DE7064D4092A5F12A8AE45428">
+									<Item class="UICorner" referent="RBX3B9AB9B519314D8E97BFDBECCE7B79D7">
 										<Properties>
 											<UDim name="CornerRadius">
 												<S>0</S>
@@ -6422,7 +6474,7 @@ end
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBXF11559BCB43248BF869829897762EB52">
+									<Item class="UIAspectRatioConstraint" referent="RBXBBE66B0AC474422A9A208D2E0B404FA2">
 										<Properties>
 											<float name="AspectRatio">6.84615421</float>
 											<token name="AspectType">0</token>
@@ -6437,7 +6489,7 @@ end
 									</Item>
 								</Item>
 							</Item>
-							<Item class="UIGridLayout" referent="RBX64A4383960BE4655A6B2A7A738B2A1CA">
+							<Item class="UIGridLayout" referent="RBX95CF81F95CF64884A0FDDFF5AB7177FB">
 								<Properties>
 									<UDim2 name="CellPadding">
 										<XS>0</XS>
@@ -6465,7 +6517,7 @@ end
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
 							</Item>
-							<Item class="TextLabel" referent="RBX4E3C91B28D94480BAB9FCF4F7B62C1B0">
+							<Item class="TextLabel" referent="RBX0BA4D3D809C14FC7B566B3EA30E2B3B7">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -6519,6 +6571,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -6558,7 +6611,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="TextBox" referent="RBXF3CF21B9F7AE4280889D800E80A1EBC8">
+								<Item class="TextBox" referent="RBX4B06911852DE46978912055F8D262B1D">
 									<Properties>
 										<bool name="ClearTextOnFocus">false</bool>
 										<Font name="FontFace">
@@ -6622,6 +6675,7 @@ end
 										<int name="BorderSizePixel">0</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
+										<token name="InputSink">0</token>
 										<bool name="Interactable">true</bool>
 										<int name="LayoutOrder">0</int>
 										<Ref name="NextSelectionDown">null</Ref>
@@ -6661,7 +6715,7 @@ end
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
-									<Item class="UIStroke" referent="RBX2A0F8187A351415EB0DDB3135D21A704">
+									<Item class="UIStroke" referent="RBX3D071EC0264B425DB1D64FB5BAAC5FFC">
 										<Properties>
 											<token name="ApplyStrokeMode">1</token>
 											<UDim name="BorderOffset">
@@ -6687,7 +6741,7 @@ end
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
-										<Item class="UIGradient" referent="RBXA0145FE09E09480DA9539C9209B4A832">
+										<Item class="UIGradient" referent="RBX1CF421E497E740D8AF8B8A2552CD763E">
 											<Properties>
 												<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 												<bool name="Enabled">true</bool>
@@ -6706,7 +6760,7 @@ end
 											</Properties>
 										</Item>
 									</Item>
-									<Item class="UIAspectRatioConstraint" referent="RBX95AF6C9B2CA54656A2C97AF99BC8501E">
+									<Item class="UIAspectRatioConstraint" referent="RBX0EB3DFB8C6E2440B96633E091EF7E134">
 										<Properties>
 											<float name="AspectRatio">7.14285707</float>
 											<token name="AspectType">0</token>
@@ -6720,7 +6774,7 @@ end
 										</Properties>
 									</Item>
 								</Item>
-								<Item class="UICorner" referent="RBX42BB9B83C2BD4E869DDDDF6E325438E8">
+								<Item class="UICorner" referent="RBX6A58485B472C4956BC3282B85D77A83C">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -6734,7 +6788,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX75B73114F49645FC9A8F5DE6D4F5D367">
+								<Item class="UIStroke" referent="RBX12DB8331ABAF421E89795B25AF5D20AA">
 									<Properties>
 										<token name="ApplyStrokeMode">1</token>
 										<UDim name="BorderOffset">
@@ -6763,7 +6817,7 @@ end
 								</Item>
 							</Item>
 						</Item>
-						<Item class="UIListLayout" referent="RBX5D10A481C8CC40EA9AA23B08126BD52A">
+						<Item class="UIListLayout" referent="RBX1F6C3C8909D244489FC290103AF0855A">
 							<Properties>
 								<token name="HorizontalFlex">0</token>
 								<token name="ItemLineAlignment">0</token>
@@ -6785,7 +6839,7 @@ end
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="UIPadding" referent="RBXA63913DD0A424D05805FB3A2B03114E3">
+						<Item class="UIPadding" referent="RBX34D1A43A759D4409A866A7790DCDDCFE">
 							<Properties>
 								<UDim name="PaddingBottom">
 									<S>0</S>
@@ -6812,7 +6866,7 @@ end
 							</Properties>
 						</Item>
 					</Item>
-					<Item class="UIAspectRatioConstraint" referent="RBX1CCEFF21C6FA4E089F6F270D10D657C0">
+					<Item class="UIAspectRatioConstraint" referent="RBX8C303CDEFEE04763B24DA4C3E8280BFD">
 						<Properties>
 							<float name="AspectRatio">0.703640342</float>
 							<token name="AspectType">0</token>
@@ -6826,7 +6880,7 @@ end
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="CanvasGroup" referent="RBXB8E2498B237F49F4A93201E0CC9761C6">
+				<Item class="CanvasGroup" referent="RBX4D097EDA961D463180B98227093041E9">
 					<Properties>
 						<Color3 name="GroupColor3">
 							<R>1</R>
@@ -6855,6 +6909,7 @@ end
 						<int name="BorderSizePixel">0</int>
 						<bool name="ClipsDescendants">true</bool>
 						<bool name="Draggable">false</bool>
+						<token name="InputSink">0</token>
 						<bool name="Interactable">true</bool>
 						<int name="LayoutOrder">0</int>
 						<Ref name="NextSelectionDown">null</Ref>
@@ -6894,7 +6949,7 @@ end
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="TextLabel" referent="RBX0A052B26A9C944A887A3573E48990F75">
+					<Item class="TextLabel" referent="RBXC31B957E73BF43A58285724FE27AD0AB">
 						<Properties>
 							<Font name="FontFace">
 								<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -6948,6 +7003,7 @@ end
 							<int name="BorderSizePixel">0</int>
 							<bool name="ClipsDescendants">false</bool>
 							<bool name="Draggable">false</bool>
+							<token name="InputSink">0</token>
 							<bool name="Interactable">false</bool>
 							<int name="LayoutOrder">-1</int>
 							<Ref name="NextSelectionDown">null</Ref>
@@ -6987,7 +7043,7 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
-						<Item class="UIStroke" referent="RBXE5BB1B92FAF54879B28228F946AA256D">
+						<Item class="UIStroke" referent="RBX7AC8AE1D6D09433B8CAF8D25D5074344">
 							<Properties>
 								<token name="ApplyStrokeMode">0</token>
 								<UDim name="BorderOffset">
@@ -7015,7 +7071,7 @@ end
 							</Properties>
 						</Item>
 					</Item>
-					<Item class="UICorner" referent="RBX3E4F8DEFD0FC474AAD175CCBE61895C3">
+					<Item class="UICorner" referent="RBXBA3A73E50F0D4F78A848287B7078AA3E">
 						<Properties>
 							<UDim name="CornerRadius">
 								<S>0</S>
@@ -7029,7 +7085,7 @@ end
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="UIStroke" referent="RBXC6429FA1AF484C4B8111FD31257EE72E">
+					<Item class="UIStroke" referent="RBXACD31A3705CA4F44BBB231ED61732367">
 						<Properties>
 							<token name="ApplyStrokeMode">0</token>
 							<UDim name="BorderOffset">
@@ -7055,7 +7111,7 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
-						<Item class="UIGradient" referent="RBX3BDA999226034B05A17FBB28ACC48634">
+						<Item class="UIGradient" referent="RBX33644DCB6492477BB2E15A08820C66F2">
 							<Properties>
 								<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 								<bool name="Enabled">true</bool>
@@ -7074,7 +7130,7 @@ end
 							</Properties>
 						</Item>
 					</Item>
-					<Item class="TextButton" referent="RBXE82A240645F5477FBBE87DC819F4B50D">
+					<Item class="TextButton" referent="RBX544EDCB49FC148BD8CD3C66D19F26FE9">
 						<Properties>
 							<Font name="FontFace">
 								<Family><url>rbxasset://fonts/families/Michroma.json</url></Family>
@@ -7134,6 +7190,7 @@ end
 							<int name="BorderSizePixel">0</int>
 							<bool name="ClipsDescendants">false</bool>
 							<bool name="Draggable">false</bool>
+							<token name="InputSink">0</token>
 							<bool name="Interactable">true</bool>
 							<int name="LayoutOrder">0</int>
 							<Ref name="NextSelectionDown">null</Ref>
@@ -7174,7 +7231,7 @@ end
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="ScrollingFrame" referent="RBXE353EE2924D94B2EB4F757775E13319D">
+					<Item class="ScrollingFrame" referent="RBXA730C88C7AE04B08918C9E15A0489348">
 						<Properties>
 							<token name="AutomaticCanvasSize">2</token>
 							<Content name="BottomImage"><url>rbxasset://textures/ui/Scroll/scroll-bottom.png</url></Content>
@@ -7224,6 +7281,7 @@ end
 							<int name="BorderSizePixel">0</int>
 							<bool name="ClipsDescendants">true</bool>
 							<bool name="Draggable">false</bool>
+							<token name="InputSink">0</token>
 							<bool name="Interactable">true</bool>
 							<int name="LayoutOrder">0</int>
 							<Ref name="NextSelectionDown">null</Ref>
@@ -7263,7 +7321,7 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
-						<Item class="UIListLayout" referent="RBX9A80E11D3DEC4C97A535F371D3290635">
+						<Item class="UIListLayout" referent="RBX85BC29EAB87F446885C5DF2514377779">
 							<Properties>
 								<token name="HorizontalFlex">0</token>
 								<token name="ItemLineAlignment">0</token>
@@ -7285,7 +7343,7 @@ end
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="TextLabel" referent="RBXFB03252682EE49F99B2795DABEA1694D">
+						<Item class="TextLabel" referent="RBXDB04FF671D97476FAFC945C86F95CF07">
 							<Properties>
 								<Font name="FontFace">
 									<Family><url>rbxasset://fonts/families/SourceSansPro.json</url></Family>
@@ -7340,6 +7398,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -7380,7 +7439,7 @@ end
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="TextLabel" referent="RBX74C190C3DFE744A5B84DD6AA25DD39BB">
+						<Item class="TextLabel" referent="RBX5715652356D740FD8C43F313B38685C3">
 							<Properties>
 								<Font name="FontFace">
 									<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -7434,6 +7493,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -7473,7 +7533,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="UICorner" referent="RBX09664FE996C24F2980BF1A187A317FE1">
+							<Item class="UICorner" referent="RBXF63334FA74A5486BBAB974CFEB9228C7">
 								<Properties>
 									<UDim name="CornerRadius">
 										<S>0</S>
@@ -7487,7 +7547,7 @@ end
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
 							</Item>
-							<Item class="UIStroke" referent="RBX4E3EEA24574F42DA8C85349BB3BFA7AE">
+							<Item class="UIStroke" referent="RBXE8E422BAC6574095A941C1E65EEA3D25">
 								<Properties>
 									<token name="ApplyStrokeMode">1</token>
 									<UDim name="BorderOffset">
@@ -7514,7 +7574,7 @@ end
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
 							</Item>
-							<Item class="TextButton" referent="RBX0B13CFBFE32A48CC8B8D47195874FA28">
+							<Item class="TextButton" referent="RBX0C7BD8EB60FC4CC0A8E19C5914CAAB6B">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -7574,6 +7634,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -7613,7 +7674,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBXB315378EBF2F47C192EE1677809AE91E">
+								<Item class="UICorner" referent="RBX30A3400A0D7B4D788BCC645F844E2C8B">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -7627,7 +7688,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIAspectRatioConstraint" referent="RBX0C983E9CDC884660859280CE85453B4A">
+								<Item class="UIAspectRatioConstraint" referent="RBXD0FE93BD0601400684135E01F7BE6E95">
 									<Properties>
 										<float name="AspectRatio">8.58559895</float>
 										<token name="AspectType">0</token>
@@ -7641,7 +7702,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="ImageLabel" referent="RBX16A7D1A9EC7448B386C114C61D799155">
+							<Item class="ImageLabel" referent="RBXF5D89DDFA7704119B2301C0F5FE04117">
 								<Properties>
 									<Content name="Image"><url>rbxassetid://102005219434744</url></Content>
 									<Color3 name="ImageColor3">
@@ -7698,6 +7759,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -7737,7 +7799,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBXCAFD7808B48D473EA54E59C27558DA41">
+								<Item class="UICorner" referent="RBXB247DAF4099942D4A8F1DAF93E8BEA27">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>1</S>
@@ -7752,7 +7814,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="UIAspectRatioConstraint" referent="RBX19F8453E5CDE4F3CB710C53D71C72FA9">
+							<Item class="UIAspectRatioConstraint" referent="RBXCA14ABB1F8CA43E2903B5C0F027DE4DF">
 								<Properties>
 									<float name="AspectRatio">9.45463657</float>
 									<token name="AspectType">0</token>
@@ -7766,7 +7828,7 @@ end
 								</Properties>
 							</Item>
 						</Item>
-						<Item class="TextLabel" referent="RBXFBB998E1F317407EA57151D775A92E7D">
+						<Item class="TextLabel" referent="RBX0D52A11C870D4F9F8E9D536209AF7B31">
 							<Properties>
 								<Font name="FontFace">
 									<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -7820,6 +7882,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -7859,7 +7922,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="UICorner" referent="RBX00E174F3B27B48F3A9EC267DC12FDE6A">
+							<Item class="UICorner" referent="RBX3108361B79E14267B542691FCD5F6BFF">
 								<Properties>
 									<UDim name="CornerRadius">
 										<S>0</S>
@@ -7873,7 +7936,7 @@ end
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
 							</Item>
-							<Item class="UIStroke" referent="RBX4E228CD3D0F34B05939F2D1AAB6DC665">
+							<Item class="UIStroke" referent="RBXBA1BFB9C6BE24037BC0A7235EA2011BB">
 								<Properties>
 									<token name="ApplyStrokeMode">1</token>
 									<UDim name="BorderOffset">
@@ -7900,7 +7963,7 @@ end
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
 							</Item>
-							<Item class="TextButton" referent="RBXC2E00F6DF37D440FAF7E2E8E89C8FB2E">
+							<Item class="TextButton" referent="RBX419A188C7C2E4DBFA8062FEBDD6DFF1F">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -7960,6 +8023,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -7999,7 +8063,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX9EA5B20EE7AE433197537C9694221177">
+								<Item class="UICorner" referent="RBXA711096217654D60B266185E3FA8C5D1">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -8013,7 +8077,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIAspectRatioConstraint" referent="RBX064EE66906E74E75A3E338218685839F">
+								<Item class="UIAspectRatioConstraint" referent="RBXE6654147B3264CC68DE2CBC6CF5F3D5A">
 									<Properties>
 										<float name="AspectRatio">8.58559895</float>
 										<token name="AspectType">0</token>
@@ -8027,7 +8091,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="ImageLabel" referent="RBX0F10B6A168674FF7A1157DA29E7F28FD">
+							<Item class="ImageLabel" referent="RBXC4CD048EEE204BC19426D098BC9CE568">
 								<Properties>
 									<Content name="Image"><url>rbxassetid://117357548269200</url></Content>
 									<Color3 name="ImageColor3">
@@ -8084,6 +8148,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -8123,7 +8188,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX286F2AA85A744012A1D1146927279315">
+								<Item class="UICorner" referent="RBXF63F729C77644F26ACB1C1D0E437CB46">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>1</S>
@@ -8138,7 +8203,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="UIAspectRatioConstraint" referent="RBXDF27BEC56C084050A5824F6BC5EB64EB">
+							<Item class="UIAspectRatioConstraint" referent="RBX7173FEF79A2E43C48DCDA5288B1DF6A1">
 								<Properties>
 									<float name="AspectRatio">9.45463657</float>
 									<token name="AspectType">0</token>
@@ -8152,7 +8217,7 @@ end
 								</Properties>
 							</Item>
 						</Item>
-						<Item class="TextLabel" referent="RBXB3E9D60557B248A5B56AB5B1EEF527D5">
+						<Item class="TextLabel" referent="RBX112943C3898B4B72AFCF235597940FBC">
 							<Properties>
 								<Font name="FontFace">
 									<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -8206,6 +8271,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -8245,7 +8311,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="UICorner" referent="RBXF97196D6B8DB4A9AAC9976A9D3C91D8D">
+							<Item class="UICorner" referent="RBX2DB18DD6D2864EE0BCDEFE2F18C80DF4">
 								<Properties>
 									<UDim name="CornerRadius">
 										<S>0</S>
@@ -8259,7 +8325,7 @@ end
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
 							</Item>
-							<Item class="UIStroke" referent="RBX4D2D0414FF2B4C31986028A039696343">
+							<Item class="UIStroke" referent="RBX445554297A5E46008940A23A7477A30E">
 								<Properties>
 									<token name="ApplyStrokeMode">1</token>
 									<UDim name="BorderOffset">
@@ -8286,7 +8352,7 @@ end
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
 							</Item>
-							<Item class="TextButton" referent="RBXA985774D2AF9439FAB0189BD15FDD301">
+							<Item class="TextButton" referent="RBXD1886E87A6AD40A2A4934D95AE284CD4">
 								<Properties>
 									<Font name="FontFace">
 										<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -8346,6 +8412,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -8385,7 +8452,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX3498367313924DACB68A6B3FDA329AB9">
+								<Item class="UICorner" referent="RBX3B358656C67F44DEB1701C997C45B2F4">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -8399,7 +8466,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIAspectRatioConstraint" referent="RBXDEA22F648A074CA28E71CA55243B3B96">
+								<Item class="UIAspectRatioConstraint" referent="RBX7DEA7B4BA7E248C3BB587B419E9772BB">
 									<Properties>
 										<float name="AspectRatio">8.58559895</float>
 										<token name="AspectType">0</token>
@@ -8413,7 +8480,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="ImageLabel" referent="RBXE1144885377A4A1FA2DA1ED841F0EB39">
+							<Item class="ImageLabel" referent="RBX152E938FFC2045948C50CB54F716E52F">
 								<Properties>
 									<Content name="Image"><url>rbxassetid://117357548269200</url></Content>
 									<Color3 name="ImageColor3">
@@ -8470,6 +8537,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -8509,7 +8577,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBXD8FC190E159F449AAE3DA7D8F0D3738A">
+								<Item class="UICorner" referent="RBX3473F534E73D488C84909288E84249FF">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>1</S>
@@ -8524,7 +8592,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="UIAspectRatioConstraint" referent="RBX0F44FE9AE5D5405C8C94C2AC928352B1">
+							<Item class="UIAspectRatioConstraint" referent="RBX0CCF05846E054F6296C77424B8A35308">
 								<Properties>
 									<float name="AspectRatio">9.45463657</float>
 									<token name="AspectType">0</token>
@@ -8539,7 +8607,7 @@ end
 							</Item>
 						</Item>
 					</Item>
-					<Item class="UIAspectRatioConstraint" referent="RBX494DAFEE9C3943CDBC418E0B5E515067">
+					<Item class="UIAspectRatioConstraint" referent="RBX482F23EDF16B4CC2AE15DB24F779084B">
 						<Properties>
 							<float name="AspectRatio">0.878885388</float>
 							<token name="AspectType">0</token>
@@ -8552,7 +8620,7 @@ end
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="TextLabel" referent="RBXB661D685D40C472FBF97DF330D4D0357">
+					<Item class="TextLabel" referent="RBX8CA111BB272F4C949BE90E4E318B5E0C">
 						<Properties>
 							<Font name="FontFace">
 								<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -8606,6 +8674,7 @@ end
 							<int name="BorderSizePixel">0</int>
 							<bool name="ClipsDescendants">false</bool>
 							<bool name="Draggable">false</bool>
+							<token name="InputSink">0</token>
 							<bool name="Interactable">true</bool>
 							<int name="LayoutOrder">0</int>
 							<Ref name="NextSelectionDown">null</Ref>
@@ -8647,7 +8716,7 @@ end
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="Frame" referent="RBXF8959EC276B14BA38F0CF0650290AF63">
+				<Item class="Frame" referent="RBX3899186003A24AE5AF09064101C6FBD1">
 					<Properties>
 						<token name="Style">0</token>
 						<bool name="Active">false</bool>
@@ -8671,6 +8740,7 @@ end
 						<int name="BorderSizePixel">0</int>
 						<bool name="ClipsDescendants">false</bool>
 						<bool name="Draggable">false</bool>
+						<token name="InputSink">0</token>
 						<bool name="Interactable">true</bool>
 						<int name="LayoutOrder">0</int>
 						<Ref name="NextSelectionDown">null</Ref>
@@ -8710,7 +8780,7 @@ end
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="Frame" referent="RBXA0C973692F344F04B0022868295147DC">
+					<Item class="Frame" referent="RBX350CC99B30404450A2F3D3005ED4A658">
 						<Properties>
 							<token name="Style">0</token>
 							<bool name="Active">false</bool>
@@ -8734,6 +8804,7 @@ end
 							<int name="BorderSizePixel">0</int>
 							<bool name="ClipsDescendants">false</bool>
 							<bool name="Draggable">false</bool>
+							<token name="InputSink">0</token>
 							<bool name="Interactable">true</bool>
 							<int name="LayoutOrder">0</int>
 							<Ref name="NextSelectionDown">null</Ref>
@@ -8773,7 +8844,7 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
-						<Item class="UICorner" referent="RBX0CA20AEA336F4B53B49D578B43859E6A">
+						<Item class="UICorner" referent="RBX83AEFEBD84114D31B3607ACD488F3F71">
 							<Properties>
 								<UDim name="CornerRadius">
 									<S>1</S>
@@ -8787,7 +8858,7 @@ end
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="UIStroke" referent="RBXA1D083E0291C42C2AFAE5B916805DB2D">
+						<Item class="UIStroke" referent="RBX8368AE247AD54A68AC0BE495CE0D2797">
 							<Properties>
 								<token name="ApplyStrokeMode">0</token>
 								<UDim name="BorderOffset">
@@ -8813,7 +8884,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="UIGradient" referent="RBX30581FAD84D446AF81A5B73A3D0B19EC">
+							<Item class="UIGradient" referent="RBXB05AB1DEE73D46C0B5D0EDFBE0B597A6">
 								<Properties>
 									<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 									<bool name="Enabled">true</bool>
@@ -8832,7 +8903,7 @@ end
 								</Properties>
 							</Item>
 						</Item>
-						<Item class="ScrollingFrame" referent="RBX28DF33FA86B949468888446334E498A3">
+						<Item class="ScrollingFrame" referent="RBX184BF3C434014E64B6A4B4745CDEF18B">
 							<Properties>
 								<token name="AutomaticCanvasSize">1</token>
 								<Content name="BottomImage"><url>rbxasset://textures/ui/Scroll/scroll-bottom.png</url></Content>
@@ -8882,6 +8953,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">true</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -8921,7 +8993,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="UIListLayout" referent="RBX3145AA07D8724CBDB84DF851227974FE">
+							<Item class="UIListLayout" referent="RBX279354B49B0E402BB9835923B1E3D712">
 								<Properties>
 									<token name="HorizontalFlex">0</token>
 									<token name="ItemLineAlignment">0</token>
@@ -8943,7 +9015,7 @@ end
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
 							</Item>
-							<Item class="ImageButton" referent="RBX563F5841045345E3964D554CF3EE19E5">
+							<Item class="ImageButton" referent="RBXAE9FC508191F4A80BCB616A1B9482456">
 								<Properties>
 									<Content name="HoverImage"><null></null></Content>
 									<Content name="Image"><url>rbxassetid://102629383369797</url></Content>
@@ -9008,6 +9080,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -9047,7 +9120,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBXF14A09293D584A7BA5066185A78123AB">
+								<Item class="UICorner" referent="RBX3A413D83441E401C8ACFBBC247B7F0C4">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -9061,7 +9134,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIAspectRatioConstraint" referent="RBX182D41A6AD7E4516A88A379ACAE860BC">
+								<Item class="UIAspectRatioConstraint" referent="RBX5C49D48364514CB18BFE4FA60158C25F">
 									<Properties>
 										<float name="AspectRatio">0.923500836</float>
 										<token name="AspectType">0</token>
@@ -9074,7 +9147,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX890458EF7B044FDF9052613750FF02E3">
+								<Item class="UIStroke" referent="RBX68E8B5E0096C422F9F2D4D4533540F61">
 									<Properties>
 										<token name="ApplyStrokeMode">0</token>
 										<UDim name="BorderOffset">
@@ -9102,7 +9175,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="ImageButton" referent="RBX8BF079AA485540B789589A09122C166C">
+							<Item class="ImageButton" referent="RBXD29F4337E8134F2EAC75891FB8ABF40F">
 								<Properties>
 									<Content name="HoverImage"><null></null></Content>
 									<Content name="Image"><url>rbxassetid://80971645363510</url></Content>
@@ -9167,6 +9240,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -9206,7 +9280,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX19BEA9CBBA3F4293A072787C79B85DEA">
+								<Item class="UICorner" referent="RBX1EF00C353F564E7DA7AD2387A75C3786">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -9220,7 +9294,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIAspectRatioConstraint" referent="RBX177C213E443D47FCAEC09C596871A1D6">
+								<Item class="UIAspectRatioConstraint" referent="RBX7423427202DA42DA93A3914A951C0111">
 									<Properties>
 										<float name="AspectRatio">0.923501432</float>
 										<token name="AspectType">0</token>
@@ -9233,7 +9307,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX0A4B7E10FBF54AF88C3726EA683A7D46">
+								<Item class="UIStroke" referent="RBX286EC85D6961437081F3C6A44A78136D">
 									<Properties>
 										<token name="ApplyStrokeMode">0</token>
 										<UDim name="BorderOffset">
@@ -9261,7 +9335,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="ImageButton" referent="RBX2371B5BE9B3F43519C70365E9C4C9C7C">
+							<Item class="ImageButton" referent="RBX776F73E60EC846BFBC257C9710DBCF1F">
 								<Properties>
 									<Content name="HoverImage"><null></null></Content>
 									<Content name="Image"><url>rbxassetid://18894995728</url></Content>
@@ -9326,6 +9400,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -9365,7 +9440,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX8842CFD31E5C4562A598B5FDA50DFCD3">
+								<Item class="UICorner" referent="RBXD368F99F2E6D40F9A8F16501CE30D59B">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -9379,7 +9454,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIAspectRatioConstraint" referent="RBXD80D6A8D4E3D426E8847755525DA2E34">
+								<Item class="UIAspectRatioConstraint" referent="RBXD5ADAB44DA674B85B7B04027FE376BF9">
 									<Properties>
 										<float name="AspectRatio">0.923500836</float>
 										<token name="AspectType">0</token>
@@ -9392,7 +9467,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBXD07AAB5A117A471794C81D97B81A3135">
+								<Item class="UIStroke" referent="RBX5FD9AE0CE44E469BBB1A62D67A86E035">
 									<Properties>
 										<token name="ApplyStrokeMode">0</token>
 										<UDim name="BorderOffset">
@@ -9420,7 +9495,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="ImageButton" referent="RBXAD987C5DD22C465EA40A31683C9B3845">
+							<Item class="ImageButton" referent="RBX46F2F21528144B578005BE0364DD3580">
 								<Properties>
 									<Content name="HoverImage"><null></null></Content>
 									<Content name="Image"><url>rbxassetid://85192078935595</url></Content>
@@ -9485,6 +9560,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -9524,7 +9600,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBXF30B6951BFD742948FBCD1EDB6A37BF7">
+								<Item class="UICorner" referent="RBX933E36439FDD4C3D9232CF83EC1C29AF">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -9538,7 +9614,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIAspectRatioConstraint" referent="RBXB8B77DDC71D544E9B30CFFB8FED3F90D">
+								<Item class="UIAspectRatioConstraint" referent="RBXE65D62A7C2B24EDB912420A2F5BD261C">
 									<Properties>
 										<float name="AspectRatio">0.923501432</float>
 										<token name="AspectType">0</token>
@@ -9551,7 +9627,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX6E7B6A1C2D734A478E5C4BAE236F821F">
+								<Item class="UIStroke" referent="RBXB25D11687CFB43B79B3A11DB32C33A18">
 									<Properties>
 										<token name="ApplyStrokeMode">0</token>
 										<UDim name="BorderOffset">
@@ -9579,7 +9655,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="ImageButton" referent="RBX94172DC580864BF984E0DE3EC25AE739">
+							<Item class="ImageButton" referent="RBX076BEFDC2F114235BF88ADA30AABE22B">
 								<Properties>
 									<Content name="HoverImage"><null></null></Content>
 									<Content name="Image"><url>rbxassetid://77707554628335</url></Content>
@@ -9644,6 +9720,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -9683,7 +9760,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX0724CA442E2D426398E2B1A245EE3047">
+								<Item class="UICorner" referent="RBXD2E163F62A08444B8E273C66BA9D4C67">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -9697,7 +9774,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIAspectRatioConstraint" referent="RBX3A90DFDC75284A90BC8964C7A1F95D98">
+								<Item class="UIAspectRatioConstraint" referent="RBXDF3093A3C347453198E681107A587302">
 									<Properties>
 										<float name="AspectRatio">0.923501432</float>
 										<token name="AspectType">0</token>
@@ -9710,7 +9787,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBX9FA0108C8CD6440DA3C8C95122690C81">
+								<Item class="UIStroke" referent="RBX7831308780914C85901C26CBD67D54CC">
 									<Properties>
 										<token name="ApplyStrokeMode">0</token>
 										<UDim name="BorderOffset">
@@ -9738,7 +9815,7 @@ end
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="ImageButton" referent="RBX6C94BC3ECE894AB1833972A841339387">
+							<Item class="ImageButton" referent="RBX0E8EA73A5C09444E8F73186B60B2DEDF">
 								<Properties>
 									<Content name="HoverImage"><null></null></Content>
 									<Content name="Image"><url>rbxassetid://125015624534852</url></Content>
@@ -9803,6 +9880,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -9842,7 +9920,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX9F0B4466E6D34E3196832655A4355910">
+								<Item class="UICorner" referent="RBX3D6B773C4AB34B778D2AD1460B0FA4DD">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>0</S>
@@ -9856,7 +9934,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIAspectRatioConstraint" referent="RBX368A723B2C764CBF86D2E8B3CC3063FF">
+								<Item class="UIAspectRatioConstraint" referent="RBX7A073FFCB8594B0283F29AA30C374727">
 									<Properties>
 										<float name="AspectRatio">0.923501432</float>
 										<token name="AspectType">0</token>
@@ -9869,7 +9947,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBXDAF20E619E8041CD9572E94B0B2FEA76">
+								<Item class="UIStroke" referent="RBX7307569777544EA48372FA0BDBD3B122">
 									<Properties>
 										<token name="ApplyStrokeMode">0</token>
 										<UDim name="BorderOffset">
@@ -9899,7 +9977,7 @@ end
 							</Item>
 						</Item>
 					</Item>
-					<Item class="Frame" referent="RBXA45170B2C3B14EA2A1440E285A814D3D">
+					<Item class="Frame" referent="RBXE8CDF13B400A4AE1B330C97B0D1340FF">
 						<Properties>
 							<token name="Style">0</token>
 							<bool name="Active">false</bool>
@@ -9923,6 +10001,7 @@ end
 							<int name="BorderSizePixel">0</int>
 							<bool name="ClipsDescendants">false</bool>
 							<bool name="Draggable">false</bool>
+							<token name="InputSink">0</token>
 							<bool name="Interactable">true</bool>
 							<int name="LayoutOrder">0</int>
 							<Ref name="NextSelectionDown">null</Ref>
@@ -9962,7 +10041,7 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
-						<Item class="UICorner" referent="RBXC33B8B7B8B4549DC83121B6AECCA4E0A">
+						<Item class="UICorner" referent="RBXE43EFAFB93004E05B4F036724BE2E777">
 							<Properties>
 								<UDim name="CornerRadius">
 									<S>0</S>
@@ -9976,7 +10055,7 @@ end
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="ImageLabel" referent="RBX9B713901D40E4B4691D26064EEDC2934">
+						<Item class="ImageLabel" referent="RBX0F4FE6F442DC41DB9D061403FC43DF4F">
 							<Properties>
 								<Content name="Image"><url>rbxassetid://80971645363510</url></Content>
 								<Color3 name="ImageColor3">
@@ -10033,6 +10112,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -10072,7 +10152,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="UICorner" referent="RBX279FC35B10BC4F08A643C5BC27BDB544">
+							<Item class="UICorner" referent="RBXC35A2D558C1B45A7AC8C5D7F97317E6F">
 								<Properties>
 									<UDim name="CornerRadius">
 										<S>0</S>
@@ -10086,7 +10166,7 @@ end
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
 							</Item>
-							<Item class="ImageLabel" referent="RBXB38A4EAADD7541E4B3D2E37FC3C307D2">
+							<Item class="ImageLabel" referent="RBXC5765C9C831B45D380C092F432CD302A">
 								<Properties>
 									<Content name="Image"><url>rbxassetid://125015624534852</url></Content>
 									<Color3 name="ImageColor3">
@@ -10143,6 +10223,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -10182,7 +10263,7 @@ end
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="UICorner" referent="RBX7799B052C295401BA6E009C128EDB4A9">
+								<Item class="UICorner" referent="RBX44D0CA8AFA8D40B681DCBC77F46494CE">
 									<Properties>
 										<UDim name="CornerRadius">
 											<S>1</S>
@@ -10196,7 +10277,7 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="UIStroke" referent="RBXF11CCE75D81E4A6EA9339CE9B8860C3D">
+								<Item class="UIStroke" referent="RBX1972A58B560F4423B9A1C50811FD0E6C">
 									<Properties>
 										<token name="ApplyStrokeMode">0</token>
 										<UDim name="BorderOffset">
@@ -10225,7 +10306,7 @@ end
 								</Item>
 							</Item>
 						</Item>
-						<Item class="TextLabel" referent="RBX374A5ED0F576423F95DEB7385898FDCA">
+						<Item class="TextLabel" referent="RBX4B0D557FFE11405997FE2857F529FEA8">
 							<Properties>
 								<Font name="FontFace">
 									<Family><url>rbxasset://fonts/families/Nunito.json</url></Family>
@@ -10279,6 +10360,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -10319,7 +10401,7 @@ end
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="TextLabel" referent="RBX4B5B477B5B5947A693A9C3B293CE0106">
+						<Item class="TextLabel" referent="RBX40D336BA874642B4BCD988ECBE320384">
 							<Properties>
 								<Font name="FontFace">
 									<Family><url>rbxasset://fonts/families/Nunito.json</url></Family>
@@ -10373,6 +10455,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -10413,7 +10496,7 @@ end
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="TextLabel" referent="RBX820F778973A64FBEBB1651E7C0E10523">
+						<Item class="TextLabel" referent="RBXB3F4C1DEBDCC4F018EF2E442B12BFD22">
 							<Properties>
 								<Font name="FontFace">
 									<Family><url>rbxasset://fonts/families/Nunito.json</url></Family>
@@ -10467,6 +10550,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -10507,7 +10591,7 @@ end
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="TextLabel" referent="RBX1E5C483C1B6F466089F800BA61CA3782">
+						<Item class="TextLabel" referent="RBX698ED1254AFB490699E76A11CE85F18E">
 							<Properties>
 								<Font name="FontFace">
 									<Family><url>rbxasset://fonts/families/Nunito.json</url></Family>
@@ -10561,6 +10645,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -10601,7 +10686,7 @@ end
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="TextLabel" referent="RBXB096EE7BFAC342109899C22BAF0F5139">
+						<Item class="TextLabel" referent="RBX5A7B5D85657F4A318253D282D27D495A">
 							<Properties>
 								<Font name="FontFace">
 									<Family><url>rbxasset://fonts/families/Nunito.json</url></Family>
@@ -10655,6 +10740,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -10694,7 +10780,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="ImageLabel" referent="RBX097E294173E441819F9B9B3779A28C31">
+							<Item class="ImageLabel" referent="RBX2681E8C05ABA4EF9933ED5E04746FA31">
 								<Properties>
 									<Content name="Image"><url>rbxassetid://10885655986</url></Content>
 									<Color3 name="ImageColor3">
@@ -10751,6 +10837,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -10792,7 +10879,7 @@ end
 								</Properties>
 							</Item>
 						</Item>
-						<Item class="TextLabel" referent="RBX6ECA46D60800406EB743142FD036193F">
+						<Item class="TextLabel" referent="RBX4762588B6BBA4767AE806FF5A64FA5CD">
 							<Properties>
 								<Font name="FontFace">
 									<Family><url>rbxasset://fonts/families/Nunito.json</url></Family>
@@ -10846,6 +10933,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -10885,7 +10973,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="ImageLabel" referent="RBX78AF4262912647878F7302406096801F">
+							<Item class="ImageLabel" referent="RBX75E7CF6D9FE04AD9866152B6D0112C6F">
 								<Properties>
 									<Content name="Image"><url>rbxassetid://129011997336231</url></Content>
 									<Color3 name="ImageColor3">
@@ -10942,6 +11030,7 @@ end
 									<int name="BorderSizePixel">0</int>
 									<bool name="ClipsDescendants">false</bool>
 									<bool name="Draggable">false</bool>
+									<token name="InputSink">0</token>
 									<bool name="Interactable">true</bool>
 									<int name="LayoutOrder">0</int>
 									<Ref name="NextSelectionDown">null</Ref>
@@ -10983,7 +11072,7 @@ end
 								</Properties>
 							</Item>
 						</Item>
-						<Item class="UIStroke" referent="RBX9B0585ACB07F4BA0920F7B1B72EFE3D2">
+						<Item class="UIStroke" referent="RBXF2610A49E8E64180991FC7EA0A1043FE">
 							<Properties>
 								<token name="ApplyStrokeMode">0</token>
 								<UDim name="BorderOffset">
@@ -11009,7 +11098,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="UIGradient" referent="RBX19D39988946649AA9A6E905EDA3513CB">
+							<Item class="UIGradient" referent="RBX7BF3EDD110D14631A1FD0890D4738E03">
 								<Properties>
 									<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 									<bool name="Enabled">true</bool>
@@ -11029,7 +11118,7 @@ end
 							</Item>
 						</Item>
 					</Item>
-					<Item class="UIAspectRatioConstraint" referent="RBX17390E6174A64224AC1769C93D24CEF1">
+					<Item class="UIAspectRatioConstraint" referent="RBXDD39E00945F146CE88E8538F3D13373E">
 						<Properties>
 							<float name="AspectRatio">1.98897064</float>
 							<token name="AspectType">0</token>
@@ -11043,7 +11132,7 @@ end
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="TextButton" referent="RBX2EE14127A9724406AD0FEB666B7D1F01">
+				<Item class="TextButton" referent="RBX4632ED2853044E0BAC4B0DA2013D8335">
 					<Properties>
 						<Font name="FontFace">
 							<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -11103,6 +11192,7 @@ end
 						<int name="BorderSizePixel">0</int>
 						<bool name="ClipsDescendants">false</bool>
 						<bool name="Draggable">false</bool>
+						<token name="InputSink">0</token>
 						<bool name="Interactable">true</bool>
 						<int name="LayoutOrder">0</int>
 						<Ref name="NextSelectionDown">null</Ref>
@@ -11142,7 +11232,7 @@ end
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="UICorner" referent="RBXFB178425722D4AB3A364D19CC1323F37">
+					<Item class="UICorner" referent="RBXEDE49D205F8F44FDA0717EF26EBBB332">
 						<Properties>
 							<UDim name="CornerRadius">
 								<S>1</S>
@@ -11156,7 +11246,7 @@ end
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="UIStroke" referent="RBXA8785ED2E6E64FFD90D2F55B7DB60F5E">
+					<Item class="UIStroke" referent="RBX40EA4296D42F40668BD45A03B1443332">
 						<Properties>
 							<token name="ApplyStrokeMode">1</token>
 							<UDim name="BorderOffset">
@@ -11182,7 +11272,7 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
-						<Item class="UIGradient" referent="RBX3F46AD4C476643E5995A21C4D930ED80">
+						<Item class="UIGradient" referent="RBX027228C193AD4847850FE745B79A421D">
 							<Properties>
 								<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 								<bool name="Enabled">true</bool>
@@ -11202,7 +11292,7 @@ end
 						</Item>
 					</Item>
 				</Item>
-				<Item class="Frame" referent="RBX6365238AC61240248F11660F72AA6732">
+				<Item class="Frame" referent="RBX705171B5E6C146AD8B47550ACBF170E4">
 					<Properties>
 						<token name="Style">0</token>
 						<bool name="Active">false</bool>
@@ -11226,6 +11316,7 @@ end
 						<int name="BorderSizePixel">0</int>
 						<bool name="ClipsDescendants">false</bool>
 						<bool name="Draggable">false</bool>
+						<token name="InputSink">0</token>
 						<bool name="Interactable">true</bool>
 						<int name="LayoutOrder">0</int>
 						<Ref name="NextSelectionDown">null</Ref>
@@ -11265,7 +11356,7 @@ end
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="UIListLayout" referent="RBX9B33FEF3238A416F8EBD44FE87017931">
+					<Item class="UIListLayout" referent="RBX3C441AD98B094136BC8C1A5CF24C8B0C">
 						<Properties>
 							<token name="HorizontalFlex">0</token>
 							<token name="ItemLineAlignment">0</token>
@@ -11287,7 +11378,7 @@ end
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="TextLabel" referent="RBX64E0802BFD99476FB477980144B6FEAB">
+					<Item class="TextLabel" referent="RBX1450F62AACBC402D99FFFF44BFACB4DD">
 						<Properties>
 							<Font name="FontFace">
 								<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -11341,6 +11432,7 @@ end
 							<int name="BorderSizePixel">0</int>
 							<bool name="ClipsDescendants">false</bool>
 							<bool name="Draggable">false</bool>
+							<token name="InputSink">0</token>
 							<bool name="Interactable">true</bool>
 							<int name="LayoutOrder">0</int>
 							<Ref name="NextSelectionDown">null</Ref>
@@ -11380,7 +11472,7 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
-						<Item class="UICorner" referent="RBXF38E3D9CB5364CADB5FA5D48DF319873">
+						<Item class="UICorner" referent="RBXC47D32744BCB4F81A00019B80747391B">
 							<Properties>
 								<UDim name="CornerRadius">
 									<S>1</S>
@@ -11394,7 +11486,7 @@ end
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="UIStroke" referent="RBX173FFD91CC0A4AF59607052AA0F69AF7">
+						<Item class="UIStroke" referent="RBXD065AD181F80492DB4B91515A9C2F0DC">
 							<Properties>
 								<token name="ApplyStrokeMode">1</token>
 								<UDim name="BorderOffset">
@@ -11420,7 +11512,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="UIGradient" referent="RBXB5DF5C356F2348EFA4A11CD6FDFF9851">
+							<Item class="UIGradient" referent="RBX86D3E81DB6F84FFF8CA9F3FE153ABEAA">
 								<Properties>
 									<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
 									<bool name="Enabled">true</bool>
@@ -11439,7 +11531,7 @@ end
 								</Properties>
 							</Item>
 						</Item>
-						<Item class="TextButton" referent="RBX2DFA12799C944B6D991ADCE25132FA8E">
+						<Item class="TextButton" referent="RBX3C109EEE55C84229A016A2B71E8EA349">
 							<Properties>
 								<Font name="FontFace">
 									<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -11499,6 +11591,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
+								<token name="InputSink">0</token>
 								<bool name="Interactable">true</bool>
 								<int name="LayoutOrder">0</int>
 								<Ref name="NextSelectionDown">null</Ref>
@@ -11538,7 +11631,7 @@ end
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="UICorner" referent="RBXFD4D1C4B22AE44779A1B5E5C6F89BEDE">
+							<Item class="UICorner" referent="RBXC49E0E7DCB054498A81D637FB6E9B667">
 								<Properties>
 									<UDim name="CornerRadius">
 										<S>1</S>
@@ -11555,7 +11648,7 @@ end
 						</Item>
 					</Item>
 				</Item>
-				<Item class="Frame" referent="RBXFB304650816940CBADCF8F0CC7F828FF">
+				<Item class="Frame" referent="RBXA82E194521B34F8685E4FEB1C702AF89">
 					<Properties>
 						<token name="Style">0</token>
 						<bool name="Active">false</bool>
@@ -11579,6 +11672,7 @@ end
 						<int name="BorderSizePixel">0</int>
 						<bool name="ClipsDescendants">false</bool>
 						<bool name="Draggable">false</bool>
+						<token name="InputSink">0</token>
 						<bool name="Interactable">true</bool>
 						<int name="LayoutOrder">0</int>
 						<Ref name="NextSelectionDown">null</Ref>
@@ -11618,7 +11712,7 @@ end
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="TextButton" referent="RBXF50B50F222D0476EA01EAF9400678C69">
+					<Item class="TextButton" referent="RBX2F56F7EC1BF543ECAFF132222EDD65BC">
 						<Properties>
 							<Font name="FontFace">
 								<Family><url>rbxasset://fonts/families/GothamSSm.json</url></Family>
@@ -11678,6 +11772,7 @@ end
 							<int name="BorderSizePixel">0</int>
 							<bool name="ClipsDescendants">false</bool>
 							<bool name="Draggable">false</bool>
+							<token name="InputSink">0</token>
 							<bool name="Interactable">true</bool>
 							<int name="LayoutOrder">0</int>
 							<Ref name="NextSelectionDown">null</Ref>
@@ -11717,7 +11812,7 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
-						<Item class="UIStroke" referent="RBX31F2A739ED14475B9300541353FC6CA1">
+						<Item class="UIStroke" referent="RBXD62BC2C14E9C4056B46D3B7D42B167C1">
 							<Properties>
 								<token name="ApplyStrokeMode">0</token>
 								<UDim name="BorderOffset">
@@ -11744,7 +11839,7 @@ end
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="UICorner" referent="RBXD1439FBFE1E84E40B260CA4FC021E5BD">
+						<Item class="UICorner" referent="RBXE6138A8ADABB435FA331DED598D22C6E">
 							<Properties>
 								<UDim name="CornerRadius">
 									<S>1</S>
@@ -11762,7 +11857,7 @@ end
 				</Item>
 			</Item>
 		</Item>
-		<Item class="ModuleScript" referent="RBX7EA872E808324A24B07C05501CA90C6E">
+		<Item class="ModuleScript" referent="RBX56251C782554448AAC02B0FFFBD54187">
 			<Properties>
 				<Content name="LinkedSource"><null></null></Content>
 				<ProtectedString name="Source"><![CDATA[local ZKApi = {}
@@ -11792,7 +11887,7 @@ end
 
 return ZKApi
 ]]></ProtectedString>
-				<string name="ScriptGuid">{3530D84E-D41F-4F49-8163-C9C0C0581BB2}</string>
+				<string name="ScriptGuid">{BCBA6731-38DE-4578-8D09-4BEE41514065}</string>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 				<bool name="DefinesCapabilities">false</bool>
@@ -11801,7 +11896,7 @@ return ZKApi
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 		</Item>
-		<Item class="Folder" referent="RBX2B61DD87BAC94B3BBB90DB52ECECC7A1">
+		<Item class="Folder" referent="RBXB7386275E59E49938426753883A6C135">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
@@ -11810,7 +11905,7 @@ return ZKApi
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBX751C2AC9C5D74A3E966EB989E75E3EEA">
+			<Item class="ModuleScript" referent="RBXAFEEC0EB729D4826B85396E7A33FDC7E">
 				<Properties>
 					<Content name="LinkedSource"><null></null></Content>
 					<ProtectedString name="Source"><![CDATA[local Settings = {}
@@ -12014,7 +12109,7 @@ end
 
 return Settings
 ]]></ProtectedString>
-					<string name="ScriptGuid">{D81EB2F8-8C95-4BE5-BFBA-4DBD7710EFF1}</string>
+					<string name="ScriptGuid">{C7909EE0-1015-475E-A4F2-1988E96ACFAF}</string>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
@@ -12023,7 +12118,7 @@ return Settings
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="ModuleScript" referent="RBX6DDD6A71E1C144F2903AE0E4390F7C7F">
+			<Item class="ModuleScript" referent="RBX206684F19217456E908C9160195D73FE">
 				<Properties>
 					<Content name="LinkedSource"><null></null></Content>
 					<ProtectedString name="Source"><![CDATA[local Activity = {}
@@ -12136,7 +12231,7 @@ function Activity:UpdateState()
 	tab.Buttons = {{label = "", url = ""}}
 
 	if not ActiveS then
-		if RunS:IsRunning() == false then
+		if not RunS:IsRunning() then
 			if CoreGUI:FindFirstChild("MoonAnimator2Gui") and CoreGUI.MoonAnimator2Gui:FindFirstChild("MoonAnimator") and CoreGUI.MoonAnimator2Gui.MoonAnimator.Enabled == true then
 				if Settings.Configs.GameName == false then
 					tab.Details = "Animating In: #######"
@@ -12189,7 +12284,7 @@ function Activity:UpdateState()
 		tab.State = "Editing '"..ActiveS.Name.."' ("..#string.split(ActiveS.source,"\n").." lines)"
 	end
 
-	if RunS:IsRunning() == true then
+	if RunS:IsRunning() then
 		tab.Images.SImage.Img = "playtesticon"
 		tab.Images.SImage.Desc = "Testing!"
 
@@ -12306,7 +12401,7 @@ end
 
 return Activity
 ]]></ProtectedString>
-					<string name="ScriptGuid">{3718A642-8188-40EF-8A66-D2C50A2C36D4}</string>
+					<string name="ScriptGuid">{A67E453E-39B9-49F4-B677-39B9134E2C72}</string>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
@@ -12315,7 +12410,7 @@ return Activity
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="ModuleScript" referent="RBXEC68EC9A74064B22A1D35F5E0483B9D2">
+			<Item class="ModuleScript" referent="RBX3BD34106024F49698FD6870591D6B935">
 				<Properties>
 					<Content name="LinkedSource"><null></null></Content>
 					<ProtectedString name="Source"><![CDATA[-- [[ Defaults ]]
@@ -12843,7 +12938,7 @@ function drag.Create(): List
 end
 
 return drag]]></ProtectedString>
-					<string name="ScriptGuid">{506C1D5D-BA08-42F7-A82E-2CC8B69B1BE2}</string>
+					<string name="ScriptGuid">{57C96567-3A42-4582-929F-5AB25BB89168}</string>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
@@ -12852,7 +12947,7 @@ return drag]]></ProtectedString>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="ModuleScript" referent="RBX10F81F9F364740F19720AF0773FD1250">
+			<Item class="ModuleScript" referent="RBXDFAB2C3743C6479AB077270742BE519C">
 				<Properties>
 					<Content name="LinkedSource"><null></null></Content>
 					<ProtectedString name="Source"><![CDATA[local preview = {}
@@ -12977,7 +13072,7 @@ end
 
 return preview
 ]]></ProtectedString>
-					<string name="ScriptGuid">{7757796C-87D1-440A-B614-FCC82BA9B1BA}</string>
+					<string name="ScriptGuid">{2B7FC9DB-7AD0-4E94-A25D-197CA52C8678}</string>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>

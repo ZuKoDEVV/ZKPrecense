@@ -1,8 +1,12 @@
+import threading
+import tkinter
 from pypresence import Presence
 import keyboard
+import subprocess
 import time
+from pynput import keyboard
+import pygetwindow
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from rich import print
 import json
 import requests
 import sys, os
@@ -14,7 +18,11 @@ client_id = "1355259672013177043"
 RPC = None
 StartRun = None
 GameImg = None
+OldUniID = None
 Ended = False
+Title = "ZKPrecense - Made By ZuKoDEV"
+
+os.system("title " + Title)
 
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -29,6 +37,7 @@ class handler(BaseHTTPRequestHandler):
         global Ended
         global GameImg
         global StartRun
+        global OldUniID
         
         try:
             parsed_data = json.loads(post_data.decode('utf-8'))
@@ -51,11 +60,12 @@ class handler(BaseHTTPRequestHandler):
 
             Activity = {}
 
-            if parsed_data["Settings"]["ShowGameImg"] == True and GameImg == None:
+            if parsed_data["Settings"]["ShowGameImg"] == True and GameImg == None or (parsed_data["UniverseID"] != OldUniID and parsed_data["Settings"]["ShowGameImg"] == True):
                 UniID = parsed_data["UniverseID"]
                 Responce = requests.get(f"https://thumbnails.roblox.com/v1/games/icons?universeIds={UniID}&returnPolicy=0&size=512x512&format=Png&isCircular=false")
                 Responce.raise_for_status()
                 GameImg = Responce.json()["data"][0]["imageUrl"]
+                OldUniID = UniID
 
             elif parsed_data["Settings"]["ShowGameImg"] == False and not GameImg == None:
                 GameImg = None
@@ -87,7 +97,7 @@ class handler(BaseHTTPRequestHandler):
                 notification.notify(
                     app_name = "ZKPrecense",
                     title = "ZKP Posible Critical ERROR!",
-                    message = str(e),
+                    message = "ZKP has a error probably new states could not save",
                     app_icon = str(Path.cwd() / "Art\\ZKPLogoExport.ico"),
                     timeout = 5
                 )
@@ -102,6 +112,7 @@ class handler(BaseHTTPRequestHandler):
         pass
 
 try:
+    print("Starting ZKPrecense...\n")
     RPC = Presence(client_id)
     RPC.connect()
     StartRun = int(time.time())
@@ -114,9 +125,10 @@ try:
     print("███████╗██║░╚██╗██║░░░░░██║░░██║███████╗╚█████╔╝███████╗██║░╚███║╚█████╔╝███████╗")
     print("╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝░╚════╝░╚══════╝╚═╝░░╚══╝░╚════╝░╚══════╝")
 
-    print("ZKPresence active and listening on port: '9977' \nMade By ZuKomaDEV \ninspired from StudioPresence v3.0.4 \nOriginated by: DRPC by RigidStudios")
+    print("ZKPresence active and listening on port: '9977' \nMade By ZuKoDEV \ninspired from StudioPresence v3.0.4 \nOriginated by: DRPC by RigidStudios")
     print("Source Code In: https://github.com/ZuKomaDEVYT/ZKPrecense")
     print("\nPress 'Ctrl + C' to Stop ZKPrecense!")
+    print("Press 'r' for restart Server")
 
     RPC.update(state = "Waiting ZKP In Studio!",start=int(time.time()))
 
@@ -133,15 +145,45 @@ except Exception as e:
    input("Press 'ENTER' to close")
    sys.exit(1)
 
+RestartingZKP = False
+
+def LisenRestart(key):
+    try:
+        global RestartingZKP
+
+        #str.find(pygetwindow.getActiveWindow().title, "ZKPrecense") == -1
+
+        if key.char == "r" and  pygetwindow.getActiveWindow().title == Title and RestartingZKP == False:
+            RestartingZKP = True
+            print("Restarting ZKPrecense...")
+            HTTPServer(('', PORT), handler).server_close()
+
+            os.startfile(sys.executable)
+            os._exit(0)
+
+    except AttributeError:
+        pass
+
+def ShhhAboutThis():
+    #print("[ZuKoLOG] Starting Restart Listener Thread")
+
+    try:
+        with keyboard.Listener(on_press=LisenRestart) as listener:
+            listener.join()
+
+    except KeyboardInterrupt:
+        keyboard.Listener.stop(LisenRestart)
+
+threading.Thread(target=ShhhAboutThis).start()
+
 try:
     with HTTPServer(('', PORT), handler) as server:
         server.serve_forever()
-        server.shutdown()
+
 except KeyboardInterrupt:
-    print("Pressed 'ctrl + c'")
+    print("Pressed 'Ctrl + C'")
 
     for i in range(4):
         print(f"Closing ZKP in: {i}", end="\r", flush=True)
         time.sleep(1)
-
-    sys.exit(0)
+    os._exit(0)
