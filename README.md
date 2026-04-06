@@ -4,11 +4,11 @@
 ![image](Art/ReadmeImgs/Customization.png)
 
 ### Special States!
-![image](art/ReadmeImgs/SpecialStates.png)
-![image](art/ReadmeImgs/SpecialStates2.png)
+![image](Art/ReadmeImgs/SpecialStates.png)
+![image](Art/ReadmeImgs/SpecialStates2.png)
 
 ### Scripts States!
-![image](art/ReadmeImgs/ScriptsStates.png)
+![image](Art/ReadmeImgs/ScriptsStates.png)
 
 # Instalation
 Its sooo easy to use this just do you need
@@ -19,7 +19,7 @@ Its sooo easy to use this just do you need
 
 # IMPORTANT
 You need to enable **Load User Plugins in Test Mode** for **Testing State** work properly
-![image](art/ReadmeImgs/LoadTest.png)
+![image](Art/ReadmeImgs/LoadTest.png)
 
 ## What is ZKPrecense
 **ZKPresence** is a plugin developed by me **ZuKoDEV**, This plugin allows you to connect **RobloxStudio with Discord**, allowing you to show what you're working on, the game's visuals, how many collaborators you have, and let people try out your experience, among many other things.
@@ -42,7 +42,7 @@ ZKPrecense has a special API that allows other plugins work with it you can see 
 
 ## Extra detais in ZKP
 - A button to preview Presence without waiting for it to update on Discord
-![image]()
+![image](Art/ReadmeImgs/PreviewInsideStudio.jpg)
 
 - Detection of multiple Studio sessions
 
